@@ -52,10 +52,3 @@ class Ejercicio9
     }
 }
 
-/*
-Preguntas:
-1. ¿Por que livelock no es deadlock? En deadlock los hilos estan
-   bloqueados. En livelock estan activos pero no progresan.
-2. ¿Los hilos estan detenidos? No, se ejecutan continuamente.
-3. ¿Como resolverlo? Backoff aleatorio, coordinador que asigna turnos.
-*/

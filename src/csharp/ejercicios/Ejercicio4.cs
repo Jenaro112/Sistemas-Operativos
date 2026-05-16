@@ -49,13 +49,3 @@ class Ejercicio4
     }
 }
 
-/*
-Preguntas:
-1. ¿Por que el resultado puede ser incorrecto? ++ no es atomico:
-   leer, sumar, escribir. Dos hilos pueden leer el mismo valor.
-2. ¿Que es seccion critica? Codigo que accede a recurso compartido
-   y debe ejecutarse de a un hilo por vez.
-3. ¿Diferencia entre lock y atomicas? lock: seccion completa,
-   puede causar contention. Atomicas (Interlocked): operacion unica
-   via hardware (CAS), mas rapida, sin deadlocks.
-*/

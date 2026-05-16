@@ -48,11 +48,3 @@ class Ejercicio3
     }
 }
 
-/*
-Preguntas:
-1. ¿Por que se necesita sincronizacion? Para evitar condiciones de carrera.
-2. ¿Que error aparece si acceden libremente? Data race: datos corruptos,
-   excepciones por cola vacia, elementos perdidos.
-3. ¿Ventajas de cola thread-safe? Codigo mas limpio, menos errores
-   (deadlocks, race conditions), sin gestion manual de locks.
-*/

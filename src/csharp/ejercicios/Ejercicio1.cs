@@ -29,11 +29,3 @@ class Ejercicio1
     }
 }
 
-/*
-Preguntas:
-1. ¿El orden de ejecucion es siempre el mismo? No, varia cada vez.
-   Depende del scheduler del SO.
-2. ¿Quien decide que hilo se ejecuta primero? El scheduler del SO.
-3. ¿Que sucede si se eliminan las pausas? Un hilo tiende a ejecutarse
-   completamente antes del otro. Se pierde la intercalacion visible.
-*/

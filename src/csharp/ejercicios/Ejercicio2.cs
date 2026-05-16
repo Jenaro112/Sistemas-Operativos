@@ -30,11 +30,3 @@ class Ejercicio2
     }
 }
 
-/*
-Preguntas:
-1. ¿Que pasaria si la descarga se ejecutara en el hilo principal?
-   La interfaz se congelaria hasta que la descarga termine.
-2. ¿Por que es importante en apps graficas? El hilo principal debe
-   estar libre para procesar eventos del usuario.
-3. ¿CPU-bound o I/O-bound? I/O-bound, simula entrada/salida.
-*/

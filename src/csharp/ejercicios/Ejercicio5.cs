@@ -65,12 +65,3 @@ class Ejercicio5
     }
 }
 
-/*
-Preguntas:
-1. ¿Por que se produce el deadlock? Cada hilo tiene un recurso que
-   el otro necesita. Se esperan mutuamente para siempre.
-2. ¿Condiciones de deadlock? Las 4 de Coffman: exclusion mutua,
-   retencion y espera, no desalojo, espera circular.
-3. ¿Como prevenirlo? Bloquear en el mismo orden, usar timeout,
-   minimizar secciones criticas.
-*/

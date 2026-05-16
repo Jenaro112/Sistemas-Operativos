@@ -64,21 +64,3 @@ public class Ejercicio5 {
     }
 }
 
-/*
-Preguntas:
-1. ¿Por qué se produce el deadlock?
-   Porque cada hilo tiene un recurso que el otro necesita y ninguno
-   libera el suyo. Quedan esperandose mutuamente para siempre.
-
-2. ¿Qué condiciones deben cumplirse para que exista deadlock?
-   Las 4 condiciones de Coffman:
-   - Exclusion mutua: los recursos no son compartibles.
-   - Retencion y espera: un hilo retiene un recurso mientras espera otro.
-   - No desalojo: un recurso no puede ser quitado forzosamente.
-   - Espera circular: existe un ciclo de hilos esperando recursos.
-
-3. ¿Cómo se puede prevenir?
-   - Bloquear recursos siempre en el mismo orden (rompe espera circular).
-   - Usar timeout con tryLock (rompe retencion y espera).
-   - Minimizar el tiempo dentro de secciones criticas.
-*/

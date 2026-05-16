@@ -37,11 +37,3 @@ class Ejercicio6
     }
 }
 
-/*
-Preguntas:
-1. ¿Que significa starvation? Un hilo nunca (o casi nunca) accede
-   al recurso porque otros lo acaparan.
-2. ¿Es lo mismo que deadlock? No. En deadlock nada avanza. En
-   starvation algunos avanzan, uno queda postergado.
-3. ¿Como reducirlo? Colas justas, envejecimiento (aging), prioridades.
-*/

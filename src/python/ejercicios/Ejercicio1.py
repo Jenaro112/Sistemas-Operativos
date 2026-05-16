@@ -20,17 +20,3 @@ hilo2.start()
 hilo1.join()
 hilo2.join()
 
-"""
-Preguntas:
-1. ¿El orden de ejecución es siempre el mismo?
-   No, el orden varía cada vez que se ejecuta. Depende del scheduler del SO.
-
-2. ¿Quién decide qué hilo se ejecuta primero?
-   El scheduler (planificador) del sistema operativo decide qué hilo
-   se ejecuta y por cuánto tiempo.
-
-3. ¿Qué sucede si se eliminan las pausas?
-   Un hilo tiende a ejecutarse completamente antes de que el otro
-   comience, porque el cambio de contexto ocurre menos frecuentemente.
-   Se pierde la intercalación visible entre hilos.
-"""

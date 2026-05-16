@@ -30,21 +30,3 @@ lento.join()
 print("\nLos hilos rapidos acaparan el recurso y el lento")
 print("apenas logra acceder (starvation).")
 
-"""
-Preguntas:
-1. ¿Qué significa que un hilo sufra starvation?
-   Significa que nunca (o muy raramente) obtiene acceso al recurso
-   porque otros hilos lo acaparan constantemente.
-
-2. ¿Es lo mismo que deadlock?
-   No. En deadlock los hilos se bloquean mutuamente y ninguno avanza.
-   En starvation hay hilos que avanzan mientras uno queda postergado
-   indefinidamente, pero el sistema sigue funcionando.
-
-3. ¿Cómo se puede reducir este problema?
-   - Usar colas justas (fair queues) como threading.Lock con
-     scheduling equitativo.
-   - Aumentar la prioridad del hilo postergado.
-   - Implementar envejecimiento (aging): aumentar prioridad cuanto
-     mas tiempo espera el hilo.
-"""

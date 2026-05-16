@@ -49,20 +49,3 @@ public class Ejercicio3 {
     }
 }
 
-/*
-Preguntas:
-1. ¿Por qué se necesita sincronización?
-   Para evitar condiciones de carrera. Sin sincronización, productor
-   y consumidor podrían acceder/modificar la cola al mismo tiempo,
-   corrompiendo los datos (inconsistencia).
-
-2. ¿Qué error aparece si productor y consumidor acceden libremente a la cola?
-   Data race / condicion de carrera. Pueden perderse elementos,
-   duplicarse, o la cola puede quedar en un estado inconsistente
-   (ej. un poll() sobre una cola vacía da null o excepción).
-
-3. ¿Qué ventajas tiene usar una cola thread-safe?
-   - Elimina la necesidad de gestionar locks manualmente.
-   - Reduce errores como deadlocks o condiciones de carrera.
-   - El codigo es mas limpio y legible.
-*/
