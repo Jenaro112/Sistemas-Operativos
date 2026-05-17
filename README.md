@@ -8,28 +8,45 @@
 - Rodriguez Lucas
 - Sandillu Axel
 
-## Como ejecutar C#
+---
+### Como ejecutar C#
 
-### Instalar .NET SDK
+#### Instalar .NET SDK
 
 **Mac (con Homebrew):**
 ```bash
 brew install dotnet
 ```
 
-**Mac (sin Homebrew):** Descargar desde https://dotnet.microsoft.com/download
+**Mac (sin Homebrew):** Descargar e instalar desde [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download)
 
-**Windows:** Descargar e instalar desde https://dotnet.microsoft.com/download
+**Windows:** Descargar e instalar desde [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download)
 
-### Ejecutar
+**Linux:**
 
-Desde la raiz del proyecto:
+* **Ubuntu / Debian:**
+  ```bash
+  sudo apt-get update && sudo apt-get install -y dotnet-sdk-8.0
+  ```
 
+* **Fedora:**
+  ```bash
+  sudo dnf install dotnet-sdk-8.0
+  ```
+
+* **Arch Linux:**
+  ```bash
+  sudo pacman -S dotnet-sdk
+  ```
+
+#### Ejecutar
+
+Desde la raíz del proyecto:
 ```bash
 dotnet run --project src/csharp
 ```
 
-Luego ingresar el numero de ejercicio (1-6, 9, 10) cuando lo solicite.
+Luego ingresar el número de ejercicio (1-6, 9, 10) cuando lo solicite.
 
 ---
 
