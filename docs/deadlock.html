@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Deadlock</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Deadlock</h1>
+
+      <h2>¿Por qué se produce?</h2>
+      <p>
+        Porque cada hilo tiene un recurso que el otro necesita y ninguno libera
+        el suyo. Quedan esperándose mutuamente para siempre.
+      </p>
+
+      <h2>Condiciones para que se de un deadlock</h2>
+      <ul>
+        <li>Exclusión mutua: los recursos no son compartibles.</li>
+        <li>
+          Retención y espera: un hilo retiene un recurso mientras espera otro.
+        </li>
+        <li>No desalojo: un recurso no puede ser quitado forzosamente.</li>
+        <li>Espera circular: existe un ciclo de hilos esperando recursos.</li>
+      </ul>
+
+      <h2>Maneras de prevenirlo</h2>
+
+      <ul>
+        <li>
+          Bloquear recursos siempre en el mismo orden, evitando la espera
+          circular entre hilos.
+        </li>
+
+        <li>
+          Usar <code>tryLock</code> con un tiempo de espera (<i>timeout</i>)
+          para evitar que un hilo quede esperando indefinidamente.
+        </li>
+
+        <li>
+          Minimizar el tiempo dentro de las secciones críticas para reducir
+          bloqueos y mejorar la concurrencia.
+        </li>
+      </ul>
+
+      <h2>Ejercicio</h2>
+      <p>
+        Implementar un programa con 2 hilos que se bloqueen mutuamente
+        utilizando locks.
+      </p>
+
+      <h2>Ejercicio</h2>
+      <p>Crear dos reursos compartidos</p>
+      <ul>
+        <li>Reacurso A.</li>
+        <li>Recurso B.</li>
+      </ul>
+
+      <p>Crear dos hilos:</p>
+      <ul>
+        <li>
+          Hilo 1: bloquea el recurso A, luego intenta bloquear el recurso B.
+        </li>
+        <li>
+          Hilo 2: bloquea el recurso B, luego intenta bloquear el recurso A.
+        </li>
+      </ul>
+      <p>Luego corregir el problema usando usando las maneras de prevenirlo</p>
+
+      <details>
+        <summary>
+          <span>Implementación en Python (click para ver)</span>
+        </summary>
+
+        <pre><code data-src="../src/python/ejercicios/Ejercicio5.py" class="language-python code-block"></code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en Java (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/java/ejercicios/Ejercicio5.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/csharp/ejercicios/Ejercicio5.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
