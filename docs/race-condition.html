@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Race Condition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1>Race Condition</h1>
+
+      <p>
+        Una race condition ocurre cuando múltiples hilos acceden al mismo
+        recurso compartido al mismo tiempo y al menos uno de ellos modifica su
+        contenido.
+      </p>
+
+      <p>
+        El resultado final depende del orden en el que el sistema operativo
+        ejecuta las instrucciones de cada hilo, por lo que el comportamiento
+        puede cambiar entre distintas ejecuciones del programa.
+      </p>
+
+      <details>
+        <summary>
+          <h2>Implementación en Python (click para ver)</h2>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/python/ejercicios/Ejercicio4.py"
+            class="language-python code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <h2>Implementación en Java (click para ver)</h2>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/java/ejercicios/Ejercicio4.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <h2>Implementación en C# (click para ver)</h2>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/csharp/ejercicios/Ejercicio4.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
