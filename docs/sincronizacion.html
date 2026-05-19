@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sincronización</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Sincronización</h1>
+      <h2>Ejercicio</h2>
+      <ul>
+        <li>
+          <b>Mutex / Lock:</b> proteger una variable compartida para evitar
+          accesos simultáneos.
+        </li>
+
+        <li>
+          <b>Semaphore:</b> permitir que solo 2 hilos accedan a un recurso al
+          mismo tiempo.
+        </li>
+
+        <li>
+          <b>Monitor / Condition:</b> coordinar la ejecución entre productor y
+          consumidor.
+        </li>
+
+        <li>
+          <b>Atomic operations:</b> incrementar un contador de forma segura sin
+          condiciones de carrera.
+        </li>
+
+        <li>
+          <b>Critical Section:</b> identificar claramente qué parte del código
+          debe ejecutarse por un solo hilo a la vez.
+        </li>
+      </ul>
+
+      <details>
+        <summary>
+          <span>Implementación en Python (click para ver)</span>
+        </summary>
+
+        <pre><code data-src="../src/python/ejercicios/Ejercicio10.py" class="language-python code-block"></code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en Java (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/java/ejercicios/Ejercicio10.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/csharp/ejercicios/Ejercicio10.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

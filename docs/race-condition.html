@@ -28,7 +28,7 @@
     <main>
       <a href="index.html">← Volver al inicio</a>
 
-      <h1>Race Condition</h1>
+      <h1 class="title">Race Condition</h1>
 
       <p>
         Una race condition ocurre cuando múltiples hilos acceden al mismo
@@ -66,7 +66,20 @@
         rápidas y sin riesgo de deadlocks, pero solo para operaciones simples
         (incrementar, sumar, etc.).
       </li>
-
+      <h2>Ejercicio</h2>
+      <p>Crear un contador compartido inicializado en 0.</p>
+      <ul>
+        <li>Crear 5 hilos .</li>
+        <li>Cada hilo debe incrementar el contador 10000 veces.</li>
+        <li>Mostrar el valor final esperado.</li>
+        <li>Mostrar el valor final obtenido.</li>
+      </ul>
+      <p>Luego corregir el problema usando:</p>
+      <ul>
+        <li>C#: lock o Interlocked</li>
+        <li>Java: synchronized o AtomicInteger</li>
+        <li>Python: Lock</li>
+      </ul>
       <details>
         <summary>
           <span>Implementación en Python (click para ver)</span>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Livelock</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Livelock</h1>
+      <h2>Es igual a Deadlock?</h2>
+      <p>
+        En deadlock los hilos están bloqueados esperando. En livelock los hilos
+        están activos, ejecutando código, pero sin progreso real.
+      </p>
+      <h2>Los hilos se detienen?</h2>
+      <p>
+        los hilos están activos y ejecutándose continuamente. Solo que ninguno
+        logra completar su tarea.
+      </p>
+      <h2>Resolución</h2>
+
+      <ul>
+        <li>
+          Introducir <i>backoff</i> aleatorio: cada hilo espera un tiempo
+          aleatorio antes de reintentar, reduciendo colisiones entre hilos.
+        </li>
+
+        <li>
+          Usar un mecanismo de coordinación, como un <i>coordinator</i>, que
+          asigne turnos de forma explícita.
+        </li>
+      </ul>
+
+      <h2>Ejercicio</h2>
+      <p>Simular dos hilos que intentan cederse el paso mutuamente.</p>
+      <ul>
+        <li>
+          Hilo A quiere usar un recurso, pero si detecta que el Hilo B también
+          quiere usarlo, cede el acceso.
+        </li>
+
+        <li>Hilo B actúa de la misma manera y también cede el recurso.</li>
+
+        <li>
+          Ambos hilos continúan activos, pero ninguno logra realizar la tarea,
+          produciendo un caso de <i>livelock</i>.
+        </li>
+      </ul>
+
+      <details>
+        <summary>
+          <span>Implementación en Python (click para ver)</span>
+        </summary>
+
+        <pre><code data-src="../src/python/ejercicios/Ejercicio9.py" class="language-python code-block"></code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en Java (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/java/ejercicios/Ejercicio9.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/csharp/ejercicios/Ejercicio9.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

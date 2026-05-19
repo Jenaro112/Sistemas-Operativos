@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Starvation</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Starvation</h1>
+      <h2>¿Qué significa que un hilo sufra starvation?</h2>
+      <p>
+        Significa que nunca (o muy raramente) obtiene acceso al recurso porque
+        otros hilos lo acaparan constantemente.
+      </p>
+
+      <h2>¿Es lo mismo que deadlock?</h2>
+      <p>
+        No. En deadlock los hilos se bloquean mutuamente y ninguno avanza. En
+        starvation hay hilos que avanzan mientras uno queda postergado
+        indefinidamente, pero el sistema sigue funcionando.
+      </p>
+      <h2>Como evitarlo</h2>
+      <ul>
+        <li>
+          Usar colas justas (<i>fair queues</i>) como
+          <code>ReentrantLock(true)</code> en Java para respetar el orden de
+          espera de los hilos.
+        </li>
+
+        <li>
+          Aumentar la prioridad del hilo postergado para darle más oportunidades
+          de ejecución.
+        </li>
+
+        <li>
+          Implementar <i>aging</i> (envejecimiento), incrementando la prioridad
+          de un hilo cuanto más tiempo permanece esperando.
+        </li>
+      </ul>
+
+      <h2>Ejercicio</h2>
+      <p>Crear varios hilos que compitan por el mismo recurso</p>
+      <ul>
+        <li>Algunos hilos deben acceder repetidamente al recurso.</li>
+
+        <li>
+          Otro hilo debe intentar acceder al mismo recurso, pero quedar
+          postergado muchas veces.
+        </li>
+
+        <li>
+          Registrar cuántas veces accede cada hilo para analizar posibles casos
+          de inanición (<i>starvation</i>).
+        </li>
+      </ul>
+
+      <details>
+        <summary>
+          <span>Implementación en Python (click para ver)</span>
+        </summary>
+
+        <pre><code data-src="../src/python/ejercicios/Ejercicio6.py" class="language-python code-block"></code></pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en Java (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/java/ejercicios/Ejercicio6.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# (click para ver)</span>
+        </summary>
+
+        <pre><code
+            data-src="../src/csharp/ejercicios/Ejercicio6.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
