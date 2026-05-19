@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Productor/Consumidor</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1>Productor/Consumidor</h1>
+
+      <h2>Sincronizacion necesaria</h2>
+      <p>
+        A fin de evitar condiciones de carrera (Race Condition), es necesario
+        sincronizar el productor con el conusumidor evitando que accedan o
+        modifiquen la cola al mismo tiempo asi no generan una inconsistencia en
+        los datos.
+      </p>
+      <h2>
+        ¿Qué pasa si el productor y el consumidor acceden libremente a la cola?
+      </h2>
+      <p>
+        Si el productor y el consumidor acceden a la cola sin sincronización,
+        puede producirse una condición de carrera (race condition). Esto ocurre
+        porque ambos hilos modifican o leen la estructura al mismo tiempo,
+        generando comportamientos impredecibles. Como consecuencia, pueden
+        perderse datos, consumirse elementos incorrectos, duplicarse tareas o
+        incluso producirse errores al intentar extraer elementos de una cola
+        vacía. La sincronización es necesaria para garantizar que las
+        operaciones sobre la cola se realicen de forma segura y consistente
+        entre los hilos.
+      </p>
+
+      <h2>Cola thread-safe</h2>
+      <p>
+        Usando una cola thread-safe obtenemos un código mas limpio y legible, y
+        además reduce la posibilidad de errores como deadlocks o race
+        conditions. También nos elimina la necesidad de gestionar locks
+        manualmente.
+      </p>
+
+      <h2>Ejercicio</h2>
+      <p>Implementar un sistema donde:</p>
+      <ul>
+        <li>Un productor genera números del 1 al 20.</li>
+        <li>Un consumidor toma esos números y los procesa.</li>
+        <li>Debe existir una cola compartida.</li>
+        <li>El productor no debe agregar datos si la cola esta llena.</li>
+        <li>El consumidor no debe consumir si la cola esta vacía.</li>
+      </ul>
+      <details>
+        <summary>
+          <span>Implementación en Python </span>
+        </summary>
+        <pre>
+          <code
+            data-src="../src/python/ejercicios/Ejercicio3.py"
+            class="language-python code-block"
+          ></code>
+        </pre>
+      </details>
+      <details>
+        <summary>
+          <span>Implementación en Java </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/java/ejercicios/Ejercicio3.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/csharp/ejercicios/Ejercicio3.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tareas Simultáneas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Tareas Simultáneas</h1>
+
+      <p>
+        Las tareas simultáneas permiten que varias operaciones se ejecuten al
+        mismo tiempo, mejorando el rendimiento y aprovechando mejor los recursos
+        del sistema.
+      </p>
+
+      <h2>Orden de Ejecución</h2>
+
+      <p>
+        El orden de ejecución no es siempre el mismo, este puede variar cada vez
+        que el programa se ejecuta.
+      </p>
+
+      <h2>¿Quién decide que hilo se ejecuta primero?</h2>
+
+      <p>
+        Quien decide el orden de ejecución de los hilos es el
+        "<strong>scheduler</strong>" El sistema operativo asigna tiempo de CPU a
+        cada hilo según su algoritmo de planificación, que puede ser basado en
+        prioridades, round-robin, entre otros.
+      </p>
+
+      <h2>¿Qué sucede si se eliminan las pausas?</h2>
+
+      <p>
+        Si eliminamos las pausas, un hilo va a tender a ejecutarse completamente
+        antes de que el otro hilo tenga la oportunidad de ejecutarse, porque el
+        cambio de contexto ocurre menos frecuentemente. Se pierde la
+        intercalación visible entre hilos.
+      </p>
+
+      <h2>Ejercicio</h2>
+
+      <p>
+        Crear 2 tareas que se ejecuten al mismo tiempo, implementando un
+        programa que:
+      </p>
+      <ul>
+        <li>Un hilo imprima números del 1 al 10.</li>
+        <li>Otro hilo imprima letras de la A a la J.</li>
+        <li>Ambos deben ejecutarse de forma concurrente.</li>
+
+        <li>
+          Agregrar una pequeña pausa entre impresiones para observar la
+          intercalación.
+        </li>
+      </ul>
+      <details>
+        <summary>
+          <span>Implementación en Python </span>
+        </summary>
+        <pre>
+          <code
+            data-src="../src/python/ejercicios/Ejercicio1.py"
+            class="language-python code-block"
+          ></code>
+        </pre>
+      </details>
+      <details>
+        <summary>
+          <span>Implementación en Java </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/java/ejercicios/Ejercicio1.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/csharp/ejercicios/Ejercicio1.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

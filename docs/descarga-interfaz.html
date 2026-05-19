@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Descarga + Interfaz simulada</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="index.html">← Volver al inicio</a>
+
+      <h1 class="title">Descarga + Interfaz simulada</h1>
+
+      <h2>Ejecución de descarga en el hilo principal</h2>
+
+      <p>
+        Si le damos la posibilidad a la descarga de ejecutarse en el hilo
+        principal nos econtrariamos con el problema de que la interfaz se
+        congelaria hasta que termine la descarga. Esto bloquearia todas las
+        acciones que quiera hacer el usuario en la interfaz, como cancelar la
+        descarga, interactuar con elementos, ni hacer clicks.
+      </p>
+
+      <h2>Importancia en aplicaciones gráficas</h2>
+      <p>
+        El hilo principal siempre tiene que estar dedicado a la UI (UI thread),
+        para que la interfaz siempre procese los eventos de usuario y se
+        mantenga responsiva. Si se bloquea, la app parece bloqueada o "no
+        responsive".
+      </p>
+
+      <h2>CPU-Bound o I/O-bound</h2>
+
+      <p>
+        Es un caso I/O-bound (ligado a entrada/salida), porque el programa pasa
+        la mayor parte del tiempo esperando operaciones externas, como descargas
+        de red o acceso a disco. El procesador no realiza cálculos intensivos,
+        sino que permanece en espera hasta que la operación de E/S finaliza. Por
+        eso, usar concurrencia o threads puede mejorar el rendimiento al
+        permitir ejecutar otras tareas mientras se espera la respuesta de la
+        E/S.
+      </p>
+      <h2>Ejercicio</h2>
+      <p>Simular una aplicacion donde:</p>
+      <ul>
+        <li>Un hilo representa una descarga de archivo.</li>
+        <li>Otro hilo representa una interfazque sigue respondiendo.</li>
+        <li>La descarga debe mostrar progeso.</li>
+        <li>La interfaz debe mostrar mensajes como: "Interfaz activa".</li>
+      </ul>
+      <details>
+        <summary>
+          <span>Implementación en Python </span>
+        </summary>
+        <pre>
+          <code
+            data-src="../src/python/ejercicios/Ejercicio2.py"
+            class="language-python code-block"
+          ></code>
+        </pre>
+      </details>
+      <details>
+        <summary>
+          <span>Implementación en Java </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/java/ejercicios/Ejercicio2.java"
+            class="language-java code-block"
+          ></code>
+        </pre>
+      </details>
+
+      <details>
+        <summary>
+          <span>Implementación en C# </span>
+        </summary>
+
+        <pre>
+          <code
+            data-src="../src/csharp/ejercicios/Ejercicio2.cs"
+            class="language-csharp code-block"
+          ></code>
+        </pre>
+      </details>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-python.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-java.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
+
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
