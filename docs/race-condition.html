@@ -42,26 +42,45 @@
         puede cambiar entre distintas ejecuciones del programa.
       </p>
 
+      <h2>Resultado inconsistente</h2>
+      <p>
+        La operación <code>++</code> no es atómica, esta lee, suma y escribe. Si
+        2 hilos acceden a un recurso, lo leen, los modifican y escriben a la
+        vez, el resultado va a ser inconsistente.
+      </p>
+      <h2>Sección Crítica</h2>
+      <p>
+        Es la parte del código que accede a un recurso compartido y no debe ser
+        ejecutada por más de un hilo a la vez para evitar inconsistencias.
+      </p>
+
+      <h2>Lock vs Operaciones atómicas</h2>
+      <li>
+        <strong>Lock</strong>: bloquea una sección crítica completa, permitiendo
+        varias operaciones como una unidad atómica. Puede causar
+        contención/sobrecarga.
+      </li>
+
+      <li>
+        <strong>Atómicas</strong>: operaciones a nivel de hardware (CAS), más
+        rápidas y sin riesgo de deadlocks, pero solo para operaciones simples
+        (incrementar, sumar, etc.).
+      </li>
+
       <details>
         <summary>
-          <h2>Implementación en Python (click para ver)</h2>
+          <span>Implementación en Python (click para ver)</span>
         </summary>
 
-        <pre>
-          <code
-            data-src="../src/python/ejercicios/Ejercicio4.py"
-            class="language-python code-block"
-          ></code>
-        </pre>
+        <pre><code data-src="../src/python/ejercicios/Ejercicio4.py" class="language-python code-block"></code></pre>
       </details>
 
       <details>
         <summary>
-          <h2>Implementación en Java (click para ver)</h2>
+          <span>Implementación en Java (click para ver)</span>
         </summary>
 
-        <pre>
-          <code
+        <pre><code
             data-src="../src/java/ejercicios/Ejercicio4.java"
             class="language-java code-block"
           ></code>
@@ -70,11 +89,10 @@
 
       <details>
         <summary>
-          <h2>Implementación en C# (click para ver)</h2>
+          <span>Implementación en C# (click para ver)</span>
         </summary>
 
-        <pre>
-          <code
+        <pre><code
             data-src="../src/csharp/ejercicios/Ejercicio4.cs"
             class="language-csharp code-block"
           ></code>
