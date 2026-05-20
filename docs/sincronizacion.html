@@ -5,7 +5,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Livelock</title>
+    <title>Sincronización</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -28,44 +28,32 @@
     <main>
       <a href="index.html">← Volver al inicio</a>
 
-      <h1 class="title">Livelock</h1>
-      <h2>Es igual a Deadlock?</h2>
-      <p>
-        En deadlock los hilos están bloqueados esperando. En livelock los hilos
-        están activos, ejecutando código, pero sin progreso real.
-      </p>
-      <h2>Los hilos se detienen?</h2>
-      <p>
-        los hilos están activos y ejecutándose continuamente. Solo que ninguno
-        logra completar su tarea.
-      </p>
-      <h2>Resolución</h2>
-
-      <ul>
-        <li>
-          Introducir <i>backoff</i> aleatorio: cada hilo espera un tiempo
-          aleatorio antes de reintentar, reduciendo colisiones entre hilos.
-        </li>
-
-        <li>
-          Usar un mecanismo de coordinación, como un <i>coordinator</i>, que
-          asigne turnos de forma explícita.
-        </li>
-      </ul>
-
+      <h1 class="title">Sincronización</h1>
       <h2>Ejercicio</h2>
-      <p>Simular dos hilos que intentan cederse el paso mutuamente.</p>
       <ul>
         <li>
-          Hilo A quiere usar un recurso, pero si detecta que el Hilo B también
-          quiere usarlo, cede el acceso.
+          <b>Mutex / Lock:</b> proteger una variable compartida para evitar
+          accesos simultáneos.
         </li>
 
-        <li>Hilo B actúa de la misma manera y también cede el recurso.</li>
+        <li>
+          <b>Semaphore:</b> permitir que solo 2 hilos accedan a un recurso al
+          mismo tiempo.
+        </li>
 
         <li>
-          Ambos hilos continúan activos, pero ninguno logra realizar la tarea,
-          produciendo un caso de <i>livelock</i>.
+          <b>Monitor / Condition:</b> coordinar la ejecución entre productor y
+          consumidor.
+        </li>
+
+        <li>
+          <b>Atomic operations:</b> incrementar un contador de forma segura sin
+          condiciones de carrera.
+        </li>
+
+        <li>
+          <b>Critical Section:</b> identificar claramente qué parte del código
+          debe ejecutarse por un solo hilo a la vez.
         </li>
       </ul>
 
@@ -74,7 +62,7 @@
           <span>Implementación en Python (click para ver)</span>
         </summary>
 
-        <pre><code data-src="../src/python/ejercicios/Ejercicio9.py" class="language-python code-block"></code></pre>
+        <pre><code data-src="../src/python/ejercicios/Ejercicio10.py" class="language-python code-block"></code></pre>
       </details>
 
       <details>
@@ -83,7 +71,7 @@
         </summary>
 
         <pre><code
-            data-src="../src/java/ejercicios/Ejercicio9.java"
+            data-src="../src/java/ejercicios/Ejercicio10.java"
             class="language-java code-block"
           ></code>
         </pre>
@@ -95,7 +83,7 @@
         </summary>
 
         <pre><code
-            data-src="../src/csharp/ejercicios/Ejercicio9.cs"
+            data-src="../src/csharp/ejercicios/Ejercicio10.cs"
             class="language-csharp code-block"
           ></code>
         </pre>
@@ -110,6 +98,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-csharp.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
