@@ -1,0 +1,12 @@
+# .NET Core
+[Bb]in/
+[Oo]bj/
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Docker
+.dockerignore
