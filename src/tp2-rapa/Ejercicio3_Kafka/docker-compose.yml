@@ -1,0 +1,34 @@
+services:
+  # * [Zookeeper]
+  # * Zookeeper es el coordinador distribuido que Kafka utiliza (en versiones < 3.3) 
+  # * para gestionar el estado del clúster, los brokers y las configuraciones.
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.0
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  # * [Kafka]
+  # * Kafka es la plataforma de Event Streaming. Los mensajes aquí son persistentes
+  # * por naturaleza y pueden ser releídos múltiples veces por diferentes grupos de consumidores.
+  kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper # ! Kafka no puede iniciar si Zookeeper no está corriendo primero.
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      
+      # ? Aquí le decimos a Kafka cómo deben conectarse los clientes desde afuera del contenedor
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      
+      # * Cantidad de réplicas de los topics generados automáticamente (1 porque tenemos 1 solo broker)
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1

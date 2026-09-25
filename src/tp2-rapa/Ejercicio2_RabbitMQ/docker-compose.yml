@@ -1,0 +1,18 @@
+version: "3.9"
+
+# * [INFRAESTRUCTURA - RabbitMQ]
+# * Docker Compose para levantar el Message Broker (Intermediario de mensajes).
+
+services:
+  rabbitmq:
+    # * Utilizamos la imagen con la etiqueta "management".
+    # ? Esta versión incluye una interfaz gráfica web muy útil para ver las colas en tiempo real.
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      # * Puerto 5672: Es el puerto estándar del protocolo AMQP por el cual los servicios C# se conectan.
+      - "5672:5672"   
+      
+      # * Puerto 15672: Es el puerto del panel de administración web.
+      # ? Podés entrar desde el navegador con http://localhost:15672 (user: guest / pass: guest).
+      - "15672:15672" 
