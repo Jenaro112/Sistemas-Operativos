@@ -10,6 +10,9 @@ PUERTO = 5000
 # ! SOCK_DGRAM = Datagramas (UDP - No orientado a conexión)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
+# ! PREVENCIÓN DEL ERROR 48: Permite reutilizar el puerto instantáneamente si lo reiniciamos
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+
 # * 2. Asociar el socket al puerto e IP
 sock.bind((IP_SERVIDOR, PUERTO))
 

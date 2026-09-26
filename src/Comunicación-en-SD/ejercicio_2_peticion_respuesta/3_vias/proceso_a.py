@@ -9,6 +9,8 @@ PUERTO_B_RECV = 5002
 
 # * Inicialización del Socket UDP
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+# ! PREVENCIÓN ERROR 48
+sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(("0.0.0.0", PUERTO_A_RECV))
 
 print("--- PROTOCOLO 3 VÍAS (Proceso A - Petición) ---")
