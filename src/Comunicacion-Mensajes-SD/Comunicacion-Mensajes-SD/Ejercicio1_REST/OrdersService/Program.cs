@@ -29,10 +29,18 @@ namespace OrdersService
                     
                     // ? Paso 2: Si hay stock, confirmamos la creación del pedido vía POST.
                     var orderResponse = await client.PostAsJsonAsync("api/inventory/order", new { ProductId = "P001", Quantity = 2 });
-                    var result = await orderResponse.Content.ReadFromJsonAsync<dynamic>();
                     
-                    // * Imprimimos el resultado exitoso devuelto por el servidor.
-                    Console.WriteLine($"Resultado de creacion: {result}");
+                    // * Mapeamos la respuesta JSON a un objeto C# para formatear el texto.
+                    var result = await orderResponse.Content.ReadFromJsonAsync<OrderCreationResponse>();
+                    
+                    if (result != null && result.Success)
+                    {
+                        Console.WriteLine($"\n✅ EXITO: {result.Message}\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"\n❌ RECHAZADO: {result?.Message}\n");
+                    }
                 }
                 else
                 {
@@ -48,6 +56,7 @@ namespace OrdersService
         }
     }
 
-    // * Registro auxiliar (Record) para mapear automáticamente el JSON de respuesta a un objeto C#.
+    // * Registros auxiliares (Records) para mapear automáticamente el JSON de respuesta a objetos C#.
     record InventoryCheckResponse(string ProductId, bool Available);
+    record OrderCreationResponse(bool Success, string Message);
 }
