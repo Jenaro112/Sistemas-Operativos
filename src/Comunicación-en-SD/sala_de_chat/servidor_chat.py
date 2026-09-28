@@ -3,7 +3,7 @@ import threading
 
 # * Configuración del servidor de chat
 IP_SERVIDOR = "0.0.0.0"  # ! Escucha en todas las interfaces de red para soportar múltiples computadoras
-PUERTO = 7000
+PUERTO = 8888
 
 # * Lista para almacenar los sockets de todos los clientes conectados
 clientes = []

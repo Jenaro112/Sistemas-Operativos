@@ -5,7 +5,7 @@ import sys
 # * Dirección IP y Puerto del servidor de chat
 # ! Se puede pasar la IP de la otra computadora como argumento (ej: python3 cliente_chat.py 192.168.1.50)
 IP_DESTINO = sys.argv[1] if len(sys.argv) > 1 else "127.0.0.1"
-PUERTO_DESTINO = 7000
+PUERTO_DESTINO = 8888
 
 def recibir_mensajes(sock):
     """
