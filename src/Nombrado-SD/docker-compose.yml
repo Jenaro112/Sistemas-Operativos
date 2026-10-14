@@ -1,0 +1,16 @@
+services:
+  inventory-service:
+    build: ./InventoryService
+    networks:
+      - ecommerce-network
+
+  orders-service:
+    build: ./OrdersService
+    depends_on:
+      - inventory-service
+    networks:
+      - ecommerce-network
+
+networks:
+  ecommerce-network:
+    driver: bridge
