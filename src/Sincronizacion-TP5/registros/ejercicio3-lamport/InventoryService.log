@@ -1,0 +1,13 @@
+[InventoryService] InventoryService iniciado. Reloj físico con desfase -4 s -> 19:35:37.012 | Lamport = 0
+[InventoryService] | Proceso          | Evento                                                  | Reloj físico | Lamport | Regla / tipo         |
+[InventoryService] |------------------|---------------------------------------------------------|--------------|---------|----------------------|
+[InventoryService] | InventoryService | Mensaje recibido de Orders (P-001)                      | 19:35:41.755 |       3 | max(0,2)+1           |
+[InventoryService] | InventoryService | Inventario verificado: notebook reservado (quedan 4)    | 19:35:41.759 |       4 | 3+1                  |
+[InventoryService] | InventoryService | Respuesta enviada a Orders (P-001)                      | 19:35:41.816 |       5 | 4+1                  |
+[InventoryService] | InventoryService | Recuento de depósito (evento concurrente)               | 19:35:42.152 |       6 | 5+1                  |
+[InventoryService] | InventoryService | Mensaje recibido de Orders (P-002)                      | 19:35:42.213 |      15 | max(6,14)+1          |
+[InventoryService] | InventoryService | Inventario verificado: monitor SIN STOCK (quedan 2)     | 19:35:42.213 |      16 | 15+1                 |
+[InventoryService] | InventoryService | Respuesta enviada a Orders (P-002)                      | 19:35:42.264 |      17 | 16+1                 |
+[InventoryService] | InventoryService | Mensaje recibido de Orders (P-003)                      | 19:35:42.324 |      22 | max(17,21)+1         |
+[InventoryService] | InventoryService | Inventario verificado: mouse reservado (quedan 18)      | 19:35:42.325 |      23 | 22+1                 |
+[InventoryService] | InventoryService | Respuesta enviada a Orders (P-003)                      | 19:35:42.377 |      24 | 23+1                 |

@@ -1,0 +1,64 @@
+[coordinador] Coordinador 'coordinador' iniciado. Hora: 19:37:01.331 (desfase 0 s, deriva 0 ppm)
+[coordinador] Nodos: nodo-1=http://localhost:5201, nodo-2=http://localhost:5202, nodo-3=http://localhost:5203
+[coordinador] Intervalo: 5 s | timeout: 2000 ms | desvío máximo para el promedio: sin límite (promedio simple)
+[coordinador] ================================================================================================
+[coordinador] RONDA 1  (coordinador: coordinador)
+[coordinador] Participante         Hora leída      RTT ms   Dif. vs coord  ¿Promedio?   Ajuste enviado Hora corregida
+[coordinador] ------------------------------------------------------------------------------------------------
+[coordinador] coordinador (coord)  19:37:01.353         -         +0.0 ms          sí       +3775.6 ms 19:37:05.129  
+[coordinador] nodo-1               19:37:06.493     200.3      +5038.8 ms          sí       -1263.2 ms 19:37:05.229  
+[coordinador] nodo-2               19:36:51.643     116.7      -9969.4 ms          sí      +13745.0 ms 19:37:05.388  
+[coordinador] nodo-3               19:37:21.762     116.9     +20033.1 ms          sí      -16257.5 ms 19:37:05.505
+[coordinador] Promedio de diferencias = (+0.0 + +5038.8 + -9969.4 + +20033.1) / 4 = +3775.6 ms
+[coordinador] Después de la sincronización:
+[coordinador]    coordinador (coord)  hora 19:37:05.716   diferencia vs coordinador         +0.0 ms
+[coordinador]    nodo-1               hora 19:37:05.682   diferencia vs coordinador        -34.9 ms
+[coordinador]    nodo-2               hora 19:37:05.687   diferencia vs coordinador        -32.7 ms
+[coordinador]    nodo-3               hora 19:37:05.690   diferencia vs coordinador        -31.4 ms
+[coordinador]    Dispersión máxima entre relojes: ANTES +30002.5 ms -> DESPUÉS +34.9 ms
+[coordinador] ================================================================================================
+[coordinador] RONDA 2  (coordinador: coordinador)
+[coordinador] Participante         Hora leída      RTT ms   Dif. vs coord  ¿Promedio?   Ajuste enviado Hora corregida
+[coordinador] ------------------------------------------------------------------------------------------------
+[coordinador] coordinador (coord)  19:37:10.726         -         +0.0 ms          sí         -20.3 ms 19:37:10.706  
+[coordinador] nodo-1               19:37:10.695       1.7        -31.3 ms          sí         +11.0 ms 19:37:10.706  
+[coordinador] nodo-2               ---                ---   SIN RESPUESTA          no              --- ---           
+[coordinador] nodo-3               19:37:12.708       1.6        -29.6 ms          sí          +9.3 ms 19:37:12.717
+[coordinador] Promedio de diferencias = (+0.0 + -31.3 + -29.6) / 3 = -20.3 ms
+[coordinador] !! nodo-2 no respondió (timeout): queda fuera del promedio y no recibe ajuste en esta ronda.
+[coordinador] Después de la sincronización:
+[coordinador]    coordinador (coord)  hora 19:37:12.724   diferencia vs coordinador         +0.0 ms
+[coordinador]    nodo-1               hora 19:37:12.726   diferencia vs coordinador         +1.5 ms
+[coordinador]    nodo-3               hora 19:37:12.725   diferencia vs coordinador         -0.2 ms
+[coordinador]    Dispersión máxima entre relojes: ANTES +31.3 ms -> DESPUÉS +1.7 ms
+[coordinador] ================================================================================================
+[coordinador] RONDA 3  (coordinador: coordinador)
+[coordinador] Participante         Hora leída      RTT ms   Dif. vs coord  ¿Promedio?   Ajuste enviado Hora corregida
+[coordinador] ------------------------------------------------------------------------------------------------
+[coordinador] coordinador (coord)  19:37:17.723         -         +0.0 ms          sí          +2.6 ms 19:37:17.725  
+[coordinador] nodo-1               19:37:17.729       1.8         +5.5 ms          sí          -3.0 ms 19:37:17.726  
+[coordinador] nodo-2               ---                ---   SIN RESPUESTA          no              --- ---           
+[coordinador] nodo-3               19:37:19.730       1.9         +2.1 ms          sí          +0.4 ms 19:37:19.730
+[coordinador] Promedio de diferencias = (+0.0 + +5.5 + +2.1) / 3 = +2.6 ms
+[coordinador] !! nodo-2 no respondió (timeout): queda fuera del promedio y no recibe ajuste en esta ronda.
+[coordinador] Después de la sincronización:
+[coordinador]    coordinador (coord)  hora 19:37:19.739   diferencia vs coordinador         +0.0 ms
+[coordinador]    nodo-1               hora 19:37:19.741   diferencia vs coordinador         +1.5 ms
+[coordinador]    nodo-3               hora 19:37:19.740   diferencia vs coordinador         -0.1 ms
+[coordinador]    Dispersión máxima entre relojes: ANTES +5.5 ms -> DESPUÉS +1.7 ms
+[coordinador] ================================================================================================
+[coordinador] RONDA 4  (coordinador: coordinador)
+[coordinador] Participante         Hora leída      RTT ms   Dif. vs coord  ¿Promedio?   Ajuste enviado Hora corregida
+[coordinador] ------------------------------------------------------------------------------------------------
+[coordinador] coordinador (coord)  19:37:24.740         -         +0.0 ms          sí          -5.9 ms 19:37:24.734  
+[coordinador] nodo-1               19:37:24.746       3.1         +4.8 ms          sí         -10.7 ms 19:37:24.735  
+[coordinador] nodo-2               19:37:24.717       7.9        -29.5 ms          sí         +23.6 ms 19:37:24.741  
+[coordinador] nodo-3               19:37:24.753       2.4         +1.0 ms          sí          -7.0 ms 19:37:24.746
+[coordinador] Promedio de diferencias = (+0.0 + +4.8 + -29.5 + +1.0) / 4 = -5.9 ms
+[coordinador] Después de la sincronización:
+[coordinador]    coordinador (coord)  hora 19:37:24.754   diferencia vs coordinador         +0.0 ms
+[coordinador]    nodo-1               hora 19:37:24.755   diferencia vs coordinador         +0.8 ms
+[coordinador]    nodo-2               hora 19:37:24.758   diferencia vs coordinador         +2.7 ms
+[coordinador]    nodo-3               hora 19:37:24.756   diferencia vs coordinador         +0.4 ms
+[coordinador]    Dispersión máxima entre relojes: ANTES +34.3 ms -> DESPUÉS +2.7 ms
+[coordinador] Coordinador finalizado.

@@ -1,0 +1,77 @@
+# Ejercicio 1 - Algoritmo de Cristian
+# Desfases iniciales respecto de la hora real (según el enunciado):
+#   Servidor de tiempo 10:00:02 -> +2 s
+#   Servidor A         10:00:00 ->  0 s
+#   Servidor B         10:00:08 -> +8 s
+#   Servidor C         09:59:55 -> -5 s
+#
+# Uso:   docker compose up --build
+# Logs:  carpeta ./logs  (o docker compose logs -f)
+
+x-client: &client
+  build: ./CristianClient
+  depends_on:
+    - time-server
+  volumes:
+    - ./logs:/app/logs
+  networks:
+    - cristian-net
+
+x-client-env: &client-env
+  TIME_SERVER_URL: http://time-server:8080
+  LOG_DIR: /app/logs
+  SAMPLES: ${SAMPLES:-3}
+  MAX_RTT_MS: ${MAX_RTT_MS:-1000}
+  REQUEST_TIMEOUT_MS: ${REQUEST_TIMEOUT_MS:-3000}
+  SYNC_INTERVAL_SECONDS: ${SYNC_INTERVAL_SECONDS:-10}
+  DISPLAY_UTC_OFFSET_HOURS: "-3"
+
+services:
+  time-server:
+    build: ./TimeServer
+    container_name: cristian-time-server
+    environment:
+      SERVER_NAME: servidor-tiempo
+      CLOCK_OFFSET_SECONDS: "2"
+      REQUEST_DELAY_MS: ${REQUEST_DELAY_MS:-0}
+      RESPONSE_DELAY_MS: ${RESPONSE_DELAY_MS:-0}
+      JITTER_MS: ${JITTER_MS:-0}
+      LOG_DIR: /app/logs
+      DISPLAY_UTC_OFFSET_HOURS: "-3"
+    ports:
+      - "5100:8080"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - cristian-net
+
+  servidor-a:
+    <<: *client
+    container_name: cristian-servidor-a
+    environment:
+      <<: *client-env
+      CLIENT_NAME: servidor-A
+      INITIAL_OFFSET_SECONDS: "0"
+      CLOCK_DRIFT_PPM: "500"
+
+  servidor-b:
+    <<: *client
+    container_name: cristian-servidor-b
+    environment:
+      <<: *client-env
+      CLIENT_NAME: servidor-B
+      INITIAL_OFFSET_SECONDS: "8"
+      CLOCK_DRIFT_PPM: "1000"
+
+  servidor-c:
+    <<: *client
+    container_name: cristian-servidor-c
+    environment:
+      <<: *client-env
+      CLIENT_NAME: servidor-C
+      INITIAL_OFFSET_SECONDS: "-5"
+      CLOCK_DRIFT_PPM: "-800"
+
+networks:
+  cristian-net:
+    driver: bridge

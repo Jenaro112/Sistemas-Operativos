@@ -1,0 +1,39 @@
+### 1) Crear un pedido (ejecuta la secuencia completa 1..9)
+POST http://localhost:5301/api/orders
+Content-Type: application/json
+
+{ "product": "notebook", "quantity": 1, "amount": 850000 }
+
+### 2) Traza combinada de los 3 servicios (orden físico vs orden Lamport)
+GET http://localhost:5301/api/trace/text
+
+### Eventos de cada servicio
+GET http://localhost:5301/api/events/text
+###
+GET http://localhost:5302/api/events/text
+###
+GET http://localhost:5303/api/events/text
+
+### 3) Eventos CONCURRENTES: eventos internos independientes en distintos servicios
+POST http://localhost:5303/api/events/internal
+Content-Type: application/json
+
+{ "description": "Conciliación bancaria nocturna" }
+
+###
+POST http://localhost:5302/api/events/internal
+Content-Type: application/json
+
+{ "description": "Recuento de depósito" }
+
+### Pedido sin stock (monitor tiene 2 unidades)
+POST http://localhost:5301/api/orders
+Content-Type: application/json
+
+{ "product": "monitor", "quantity": 5, "amount": 400000 }
+
+### Pago rechazado (monto mayor al máximo aprobado)
+POST http://localhost:5301/api/orders
+Content-Type: application/json
+
+{ "product": "mouse", "quantity": 1, "amount": 9000000 }

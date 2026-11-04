@@ -1,0 +1,80 @@
+ORDEN POR RELOJ FÍSICO (cada servicio usa su propio reloj, con desfase):
+| Proceso          | Evento                                                  | Reloj físico | Lamport | Regla / tipo         |
+|------------------|---------------------------------------------------------|--------------|---------|----------------------|
+| InventoryService | Mensaje recibido de Orders (P-001)                      | 19:35:41.755 |       3 | recep. <- Orders     |
+| InventoryService | Inventario verificado: notebook reservado (quedan 4)    | 19:35:41.759 |       4 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-001)                      | 19:35:41.816 |       5 | envío -> Orders      |
+| InventoryService | Recuento de depósito (evento concurrente)               | 19:35:42.152 |       6 | interno              |
+| InventoryService | Mensaje recibido de Orders (P-002)                      | 19:35:42.213 |      15 | recep. <- Orders     |
+| InventoryService | Inventario verificado: monitor SIN STOCK (quedan 2)     | 19:35:42.213 |      16 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-002)                      | 19:35:42.264 |      17 | envío -> Orders      |
+| InventoryService | Mensaje recibido de Orders (P-003)                      | 19:35:42.324 |      22 | recep. <- Orders     |
+| InventoryService | Inventario verificado: mouse reservado (quedan 18)      | 19:35:42.325 |      23 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-003)                      | 19:35:42.377 |      24 | envío -> Orders      |
+| PaymentsService  | Conciliación bancaria (evento concurrente)              | 19:35:43.353 |       1 | interno              |
+| PaymentsService  | Solicitud de pago recibida (P-001)                      | 19:35:43.948 |       8 | recep. <- Orders     |
+| PaymentsService  | Pago procesado TX-0001: $850000 APROBADO                | 19:35:43.949 |       9 | interno              |
+| PaymentsService  | Confirmación de pago enviada (P-001)                    | 19:35:44.002 |      10 | envío -> Orders      |
+| PaymentsService  | Solicitud de pago recibida (P-003)                      | 19:35:44.431 |      27 | recep. <- Orders     |
+| PaymentsService  | Pago procesado TX-0002: $30000 APROBADO                 | 19:35:44.432 |      28 | interno              |
+| PaymentsService  | Confirmación de pago enviada (P-003)                    | 19:35:44.486 |      29 | envío -> Orders      |
+| OrdersService    | Pedido recibido P-001 (1 x notebook)                    | 19:35:45.509 |       1 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-001)                     | 19:35:45.511 |       2 | envío -> Inventory   |
+| OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:45.854 |       6 | recep. <- Inventory  |
+| OrdersService    | Solicitud de pago enviada (P-001)                       | 19:35:45.855 |       7 | envío -> Payments    |
+| OrdersService    | Confirmación de pago recibida (TX-0001)                 | 19:35:46.018 |      11 | recep. <- Payments   |
+| OrdersService    | Pedido confirmado P-001                                 | 19:35:46.018 |      12 | interno              |
+| OrdersService    | Pedido recibido P-002 (5 x monitor)                     | 19:35:46.161 |      13 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-002)                     | 19:35:46.161 |      14 | envío -> Inventory   |
+| OrdersService    | Respuesta de Inventory recibida (stock insuficiente)    | 19:35:46.264 |      18 | recep. <- Inventory  |
+| OrdersService    | Pedido rechazado P-002 (sin stock)                      | 19:35:46.265 |      19 | interno              |
+| OrdersService    | Pedido recibido P-003 (2 x mouse)                       | 19:35:46.273 |      20 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-003)                     | 19:35:46.273 |      21 | envío -> Inventory   |
+| OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:46.378 |      25 | recep. <- Inventory  |
+| OrdersService    | Solicitud de pago enviada (P-003)                       | 19:35:46.378 |      26 | envío -> Payments    |
+| OrdersService    | Confirmación de pago recibida (TX-0002)                 | 19:35:46.488 |      30 | recep. <- Payments   |
+| OrdersService    | Pedido confirmado P-003                                 | 19:35:46.489 |      31 | interno              |
+
+ORDEN POR RELOJ DE LAMPORT (L, desempate por nombre de proceso = orden total):
+| Proceso          | Evento                                                  | Reloj físico | Lamport | Regla / tipo         |
+|------------------|---------------------------------------------------------|--------------|---------|----------------------|
+| OrdersService    | Pedido recibido P-001 (1 x notebook)                    | 19:35:45.509 |       1 | interno              |
+| PaymentsService  | Conciliación bancaria (evento concurrente)              | 19:35:43.353 |       1 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-001)                     | 19:35:45.511 |       2 | envío -> Inventory   |
+| InventoryService | Mensaje recibido de Orders (P-001)                      | 19:35:41.755 |       3 | recep. <- Orders     |
+| InventoryService | Inventario verificado: notebook reservado (quedan 4)    | 19:35:41.759 |       4 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-001)                      | 19:35:41.816 |       5 | envío -> Orders      |
+| InventoryService | Recuento de depósito (evento concurrente)               | 19:35:42.152 |       6 | interno              |
+| OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:45.854 |       6 | recep. <- Inventory  |
+| OrdersService    | Solicitud de pago enviada (P-001)                       | 19:35:45.855 |       7 | envío -> Payments    |
+| PaymentsService  | Solicitud de pago recibida (P-001)                      | 19:35:43.948 |       8 | recep. <- Orders     |
+| PaymentsService  | Pago procesado TX-0001: $850000 APROBADO                | 19:35:43.949 |       9 | interno              |
+| PaymentsService  | Confirmación de pago enviada (P-001)                    | 19:35:44.002 |      10 | envío -> Orders      |
+| OrdersService    | Confirmación de pago recibida (TX-0001)                 | 19:35:46.018 |      11 | recep. <- Payments   |
+| OrdersService    | Pedido confirmado P-001                                 | 19:35:46.018 |      12 | interno              |
+| OrdersService    | Pedido recibido P-002 (5 x monitor)                     | 19:35:46.161 |      13 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-002)                     | 19:35:46.161 |      14 | envío -> Inventory   |
+| InventoryService | Mensaje recibido de Orders (P-002)                      | 19:35:42.213 |      15 | recep. <- Orders     |
+| InventoryService | Inventario verificado: monitor SIN STOCK (quedan 2)     | 19:35:42.213 |      16 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-002)                      | 19:35:42.264 |      17 | envío -> Orders      |
+| OrdersService    | Respuesta de Inventory recibida (stock insuficiente)    | 19:35:46.264 |      18 | recep. <- Inventory  |
+| OrdersService    | Pedido rechazado P-002 (sin stock)                      | 19:35:46.265 |      19 | interno              |
+| OrdersService    | Pedido recibido P-003 (2 x mouse)                       | 19:35:46.273 |      20 | interno              |
+| OrdersService    | Mensaje enviado a Inventory (P-003)                     | 19:35:46.273 |      21 | envío -> Inventory   |
+| InventoryService | Mensaje recibido de Orders (P-003)                      | 19:35:42.324 |      22 | recep. <- Orders     |
+| InventoryService | Inventario verificado: mouse reservado (quedan 18)      | 19:35:42.325 |      23 | interno              |
+| InventoryService | Respuesta enviada a Orders (P-003)                      | 19:35:42.377 |      24 | envío -> Orders      |
+| OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:46.378 |      25 | recep. <- Inventory  |
+| OrdersService    | Solicitud de pago enviada (P-003)                       | 19:35:46.378 |      26 | envío -> Payments    |
+| PaymentsService  | Solicitud de pago recibida (P-003)                      | 19:35:44.431 |      27 | recep. <- Orders     |
+| PaymentsService  | Pago procesado TX-0002: $30000 APROBADO                 | 19:35:44.432 |      28 | interno              |
+| PaymentsService  | Confirmación de pago enviada (P-003)                    | 19:35:44.486 |      29 | envío -> Orders      |
+| OrdersService    | Confirmación de pago recibida (TX-0002)                 | 19:35:46.488 |      30 | recep. <- Payments   |
+| OrdersService    | Pedido confirmado P-003                                 | 19:35:46.489 |      31 | interno              |
+
+ANOMALÍAS DEL RELOJ FÍSICO (recepción con hora ANTERIOR al envío):
+  - 'Mensaje enviado a Inventory (P-001)' (OrdersService, 19:35:45.511) -> 'Mensaje recibido de Orders (P-001)' (InventoryService, 19:35:41.755)   pero Lamport 2 < 3 ✔
+  - 'Mensaje enviado a Inventory (P-002)' (OrdersService, 19:35:46.161) -> 'Mensaje recibido de Orders (P-002)' (InventoryService, 19:35:42.213)   pero Lamport 14 < 15 ✔
+  - 'Mensaje enviado a Inventory (P-003)' (OrdersService, 19:35:46.273) -> 'Mensaje recibido de Orders (P-003)' (InventoryService, 19:35:42.324)   pero Lamport 21 < 22 ✔
+  - 'Solicitud de pago enviada (P-001)' (OrdersService, 19:35:45.855) -> 'Solicitud de pago recibida (P-001)' (PaymentsService, 19:35:43.948)   pero Lamport 7 < 8 ✔
+  - 'Solicitud de pago enviada (P-003)' (OrdersService, 19:35:46.378) -> 'Solicitud de pago recibida (P-003)' (PaymentsService, 19:35:44.431)   pero Lamport 26 < 27 ✔

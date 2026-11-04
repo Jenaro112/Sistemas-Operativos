@@ -1,0 +1,19 @@
+[OrdersService] OrdersService iniciado. Reloj físico con desfase 0 s -> 19:35:41.201 | Lamport = 0
+[OrdersService] | Proceso          | Evento                                                  | Reloj físico | Lamport | Regla / tipo         |
+[OrdersService] |------------------|---------------------------------------------------------|--------------|---------|----------------------|
+[OrdersService] | OrdersService    | Pedido recibido P-001 (1 x notebook)                    | 19:35:45.509 |       1 | 0+1                  |
+[OrdersService] | OrdersService    | Mensaje enviado a Inventory (P-001)                     | 19:35:45.511 |       2 | 1+1                  |
+[OrdersService] | OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:45.854 |       6 | max(2,5)+1           |
+[OrdersService] | OrdersService    | Solicitud de pago enviada (P-001)                       | 19:35:45.855 |       7 | 6+1                  |
+[OrdersService] | OrdersService    | Confirmación de pago recibida (TX-0001)                 | 19:35:46.018 |      11 | max(7,10)+1          |
+[OrdersService] | OrdersService    | Pedido confirmado P-001                                 | 19:35:46.018 |      12 | 11+1                 |
+[OrdersService] | OrdersService    | Pedido recibido P-002 (5 x monitor)                     | 19:35:46.161 |      13 | 12+1                 |
+[OrdersService] | OrdersService    | Mensaje enviado a Inventory (P-002)                     | 19:35:46.161 |      14 | 13+1                 |
+[OrdersService] | OrdersService    | Respuesta de Inventory recibida (stock insuficiente)    | 19:35:46.264 |      18 | max(14,17)+1         |
+[OrdersService] | OrdersService    | Pedido rechazado P-002 (sin stock)                      | 19:35:46.265 |      19 | 18+1                 |
+[OrdersService] | OrdersService    | Pedido recibido P-003 (2 x mouse)                       | 19:35:46.273 |      20 | 19+1                 |
+[OrdersService] | OrdersService    | Mensaje enviado a Inventory (P-003)                     | 19:35:46.273 |      21 | 20+1                 |
+[OrdersService] | OrdersService    | Respuesta de Inventory recibida (stock OK)              | 19:35:46.378 |      25 | max(21,24)+1         |
+[OrdersService] | OrdersService    | Solicitud de pago enviada (P-003)                       | 19:35:46.378 |      26 | 25+1                 |
+[OrdersService] | OrdersService    | Confirmación de pago recibida (TX-0002)                 | 19:35:46.488 |      30 | max(26,29)+1         |
+[OrdersService] | OrdersService    | Pedido confirmado P-003                                 | 19:35:46.489 |      31 | 30+1                 |

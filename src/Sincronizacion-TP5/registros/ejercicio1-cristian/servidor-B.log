@@ -1,0 +1,83 @@
+[servidor-B] Cliente 'servidor-B' iniciado. Hora local inicial: 19:32:50.344 (desfase +8 s, deriva 1000 ppm)
+[servidor-B] Servidor de tiempo: http://localhost:5100 | muestras por ronda: 3 | RTT máx: 1000 ms | timeout: 1500 ms | intervalo: 8 s
+[servidor-B] ========================================================================
+[servidor-B] RONDA 1 - servidor-B
+[servidor-B]   Muestra 1: T0=19:32:50.362  T1=19:32:50.512  Ts=19:32:44.440  RTT=150.9 ms
+[servidor-B]   Muestra 2: T0=19:32:50.513  T1=19:32:50.516  Ts=19:32:44.514  RTT=2.7 ms
+[servidor-B]   Muestra 3: T0=19:32:50.516  T1=19:32:50.523  Ts=19:32:44.516  RTT=7.7 ms
+[servidor-B]   Muestra elegida: #2 (RTT mínimo = 2.7 ms, procesamiento servidor = 0.001 ms)
+[servidor-B]   Hora estimada = Ts + (RTT - I)/2 = 19:32:44.514 + 1.4 ms = 19:32:44.515
+[servidor-B]   Reloj del SO (no se modifica) : 19:32:50.516
+[servidor-B]   Reloj de la app ANTES         : 19:32:50.516
+[servidor-B]   Reloj de la app DESPUÉS       : 19:32:44.515
+[servidor-B]   Diferencia (después - antes)  : -6000.5 ms
+[servidor-B]   Corrección total vs reloj SO  : -6000.5 ms
+[servidor-B]   Precisión estimada            : ±1.4 ms
+[servidor-B] ========================================================================
+[servidor-B] RONDA 2 - servidor-B
+[servidor-B]   Muestra 1: T0=19:32:58.531  T1=19:32:58.532  Ts=19:32:52.523  RTT=1.8 ms
+[servidor-B]   Muestra 2: T0=19:32:58.532  T1=19:32:58.534  Ts=19:32:52.525  RTT=1.6 ms
+[servidor-B]   Muestra 3: T0=19:32:58.534  T1=19:32:58.535  Ts=19:32:52.526  RTT=0.8 ms
+[servidor-B]   Muestra elegida: #3 (RTT mínimo = 0.8 ms, procesamiento servidor = 0.001 ms)
+[servidor-B]   Hora estimada = Ts + (RTT - I)/2 = 19:32:52.526 + 0.4 ms = 19:32:52.527
+[servidor-B]   Reloj del SO (no se modifica) : 19:32:58.535
+[servidor-B]   Reloj de la app ANTES         : 19:32:52.534
+[servidor-B]   Reloj de la app DESPUÉS       : 19:32:52.527
+[servidor-B]   Diferencia (después - antes)  : -7.7 ms
+[servidor-B]   Corrección total vs reloj SO  : -6008.2 ms
+[servidor-B]   Precisión estimada            : ±0.4 ms
+[servidor-B] ========================================================================
+[servidor-B] RONDA 3 - servidor-B
+[servidor-B]   Muestra 1: T0=19:33:06.542  T1=19:33:06.544  Ts=19:33:00.526  RTT=2.3 ms
+[servidor-B]   Muestra 2: T0=19:33:06.544  T1=19:33:06.545  Ts=19:33:00.528  RTT=1.0 ms
+[servidor-B]   Muestra 3: T0=19:33:06.545  T1=19:33:06.546  Ts=19:33:00.529  RTT=1.0 ms
+[servidor-B]   Muestra elegida: #3 (RTT mínimo = 1.0 ms, procesamiento servidor = 0.001 ms)
+[servidor-B]   Hora estimada = Ts + (RTT - I)/2 = 19:33:00.529 + 0.5 ms = 19:33:00.530
+[servidor-B]   Reloj del SO (no se modifica) : 19:33:06.546
+[servidor-B]   Reloj de la app ANTES         : 19:33:00.538
+[servidor-B]   Reloj de la app DESPUÉS       : 19:33:00.530
+[servidor-B]   Diferencia (después - antes)  : -8.1 ms
+[servidor-B]   Corrección total vs reloj SO  : -6016.3 ms
+[servidor-B]   Precisión estimada            : ±0.5 ms
+[servidor-B] ========================================================================
+[servidor-B] RONDA 4 - servidor-B
+[servidor-B]   Muestra 1: T0=19:33:14.552  T1=19:33:15.143  Ts=19:33:08.989  RTT=590.9 ms
+[servidor-B]   Muestra 2: T0=19:33:15.143  T1=19:33:15.697  Ts=19:33:09.604  RTT=554.4 ms
+[servidor-B]   Muestra 3: T0=19:33:15.698  T1=19:33:16.300  Ts=19:33:10.170  RTT=602.9 ms
+[servidor-B]   Muestra elegida: #2 (RTT mínimo = 554.4 ms, procesamiento servidor = 0.003 ms)
+[servidor-B]   Hora estimada = Ts + (RTT - I)/2 = 19:33:09.604 + 277.2 ms = 19:33:09.881
+[servidor-B]   Reloj del SO (no se modifica) : 19:33:15.697
+[servidor-B]   Reloj de la app ANTES         : 19:33:09.681
+[servidor-B]   Reloj de la app DESPUÉS       : 19:33:09.881
+[servidor-B]   Diferencia (después - antes)  : +200.4 ms
+[servidor-B]   Corrección total vs reloj SO  : -5815.9 ms
+[servidor-B]   Precisión estimada            : ±277.2 ms
+[servidor-B] ========================================================================
+[servidor-B] RONDA 5 - servidor-B
+[servidor-B]   Muestra 1: T0=19:33:24.307  T1=19:33:25.512  Ts=19:33:19.078  RTT=1204.9 ms
+[servidor-B]   Muestra 2: T0=19:33:25.513  T1=19:33:26.710  Ts=19:33:20.277  RTT=1197.1 ms
+[servidor-B]   Muestra 3: T0=19:33:26.710  T1=19:33:27.921  Ts=19:33:21.480  RTT=1211.4 ms
+[servidor-B]   !! Todas las muestras superan el RTT máximo (1000 ms). La estimación sería imprecisa (±598.6 ms): NO se ajusta el reloj.
+[servidor-B] ========================================================================
+[servidor-B] RONDA 6 - servidor-B
+[servidor-B]   Muestra 1: SIN RESPUESTA tras 1513 ms (TaskCanceledException)
+[servidor-B]   Muestra 2: SIN RESPUESTA tras 1505 ms (TaskCanceledException)
+[servidor-B]   Muestra 3: SIN RESPUESTA tras 1504 ms (TaskCanceledException)
+[servidor-B]   !! Servidor de tiempo NO RESPONDE (1 ronda/s seguidas, última sincronización hace 25 s).
+[servidor-B]   !! Se mantiene la última corrección (-5815.9 ms); el reloj de la app
+[servidor-B]   !! sigue avanzando con la deriva del reloj local (1000 ppm) y el error crece.
+[servidor-B]   Hora app actual: 19:33:34.635
+[servidor-B] ========================================================================
+[servidor-B] RONDA 7 - servidor-B
+[servidor-B]   Muestra 1: T0=19:33:48.461  T1=19:33:48.463  Ts=19:33:42.404  RTT=1.6 ms
+[servidor-B]   Muestra 2: T0=19:33:48.463  T1=19:33:48.467  Ts=19:33:42.407  RTT=4.3 ms
+[servidor-B]   Muestra 3: T0=19:33:48.467  T1=19:33:48.468  Ts=19:33:42.410  RTT=1.0 ms
+[servidor-B]   Muestra elegida: #3 (RTT mínimo = 1.0 ms, procesamiento servidor = 0.001 ms)
+[servidor-B]   Hora estimada = Ts + (RTT - I)/2 = 19:33:42.410 + 0.5 ms = 19:33:42.410
+[servidor-B]   Reloj del SO (no se modifica) : 19:33:48.468
+[servidor-B]   Reloj de la app ANTES         : 19:33:42.652
+[servidor-B]   Reloj de la app DESPUÉS       : 19:33:42.410
+[servidor-B]   Diferencia (después - antes)  : -242.1 ms
+[servidor-B]   Corrección total vs reloj SO  : -6058.0 ms
+[servidor-B]   Precisión estimada            : ±0.5 ms
+[servidor-B] Cliente finalizado. Hora SO: 19:33:48.468 | Hora app: 19:33:42.410

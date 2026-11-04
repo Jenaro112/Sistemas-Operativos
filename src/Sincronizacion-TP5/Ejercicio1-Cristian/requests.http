@@ -1,0 +1,23 @@
+### Consultar la hora del servidor de tiempo
+GET http://localhost:5100/api/time?client=manual
+
+### Ver configuración de red simulada
+GET http://localhost:5100/api/admin/network
+
+### Simular red lenta y asimétrica (RTT alto)
+POST http://localhost:5100/api/admin/network
+Content-Type: application/json
+
+{ "requestDelayMs": 1200, "responseDelayMs": 200, "jitterMs": 300 }
+
+### Volver a red normal
+POST http://localhost:5100/api/admin/network
+Content-Type: application/json
+
+{ "requestDelayMs": 0, "responseDelayMs": 0, "jitterMs": 0 }
+
+### Simular caída del servidor de tiempo (deja de responder)
+POST http://localhost:5100/api/admin/down
+
+### Restablecer el servidor de tiempo
+POST http://localhost:5100/api/admin/up

@@ -1,0 +1,7 @@
+[nodo-2] Nodo 'nodo-2' iniciado. Hora simulada: 19:36:32.759 (desfase -10 s, deriva -600 ppm)
+[nodo-2] Coordinador solicita la hora -> 19:36:36.526
+[nodo-2] Ronda 1: ajuste recibido +8326.6 ms | antes 19:36:36.763 -> después 19:36:45.090 | desfase acumulado vs SO -1673.4 ms
+[nodo-2] Coordinador solicita la hora -> 19:36:45.144
+[nodo-2] Coordinador solicita la hora -> 19:36:50.149
+[nodo-2] Ronda 2: ajuste recibido +11.0 ms | antes 19:36:50.155 -> después 19:36:50.166 | desfase acumulado vs SO -1662.5 ms
+[nodo-2] Coordinador solicita la hora -> 19:36:50.170

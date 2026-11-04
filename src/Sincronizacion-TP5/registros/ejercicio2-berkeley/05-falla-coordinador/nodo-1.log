@@ -1,0 +1,8 @@
+[nodo-1] Nodo 'nodo-1' iniciado. Hora simulada: 19:37:31.698 (desfase +5 s, deriva 800 ppm)
+[nodo-1] Coordinador solicita la hora -> 19:37:35.585
+[nodo-1] Ronda 1: ajuste recibido -1264.2 ms | antes 19:37:35.955 -> después 19:37:34.691 | desfase acumulado vs SO +3735.8 ms
+[nodo-1] Coordinador solicita la hora -> 19:37:34.799
+[nodo-1] Coordinador solicita la hora -> 19:37:39.812
+[nodo-1] Ronda 2: ajuste recibido +7.8 ms | antes 19:37:39.818 -> después 19:37:39.826 | desfase acumulado vs SO +3743.5 ms
+[nodo-1] Coordinador solicita la hora -> 19:37:39.833
+[nodo-1] !! Sin ajustes del coordinador hace 16 s. Se continúa con el reloj local (19:37:55.580, deriva 800 ppm). El grupo deja de estar sincronizado.

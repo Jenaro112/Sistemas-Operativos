@@ -1,0 +1,72 @@
+# Ejercicio 3 - Relojes lógicos de Lamport
+# Cada servicio tiene un reloj físico DESFASADO a propósito:
+#   OrdersService 0 s | InventoryService -4 s | PaymentsService -2 s
+#
+# Uso:
+#   docker compose up --build
+#   curl -X POST http://localhost:5301/api/orders -H "Content-Type: application/json" -d '{"product":"notebook","quantity":1,"amount":850000}'
+#   curl http://localhost:5301/api/trace/text
+
+x-common-env: &common-env
+  LOG_DIR: /app/logs
+  DISPLAY_UTC_OFFSET_HOURS: "-3"
+  NETWORK_DELAY_MS: ${NETWORK_DELAY_MS:-50}
+
+services:
+  orders-service:
+    build:
+      context: .
+      dockerfile: OrdersService/Dockerfile
+    container_name: lamport-orders
+    environment:
+      <<: *common-env
+      SERVICE_NAME: OrdersService
+      PHYSICAL_CLOCK_OFFSET_SECONDS: "0"
+      INVENTORY_URL: http://inventory-service:8080
+      PAYMENTS_URL: http://payments-service:8080
+    ports:
+      - "5301:8080"
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - inventory-service
+      - payments-service
+    networks:
+      - ecommerce-net
+
+  inventory-service:
+    build:
+      context: .
+      dockerfile: InventoryService/Dockerfile
+    container_name: lamport-inventory
+    environment:
+      <<: *common-env
+      SERVICE_NAME: InventoryService
+      PHYSICAL_CLOCK_OFFSET_SECONDS: "-4"
+    ports:
+      - "5302:8080"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - ecommerce-net
+
+  payments-service:
+    build:
+      context: .
+      dockerfile: PaymentsService/Dockerfile
+    container_name: lamport-payments
+    environment:
+      <<: *common-env
+      SERVICE_NAME: PaymentsService
+      PHYSICAL_CLOCK_OFFSET_SECONDS: "-2"
+      MAX_APPROVED_AMOUNT: "5000000"
+    ports:
+      - "5303:8080"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - ecommerce-net
+
+networks:
+  ecommerce-net:
+    driver: bridge

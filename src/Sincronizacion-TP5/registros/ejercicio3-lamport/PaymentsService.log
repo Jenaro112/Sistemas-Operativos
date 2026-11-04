@@ -1,0 +1,10 @@
+[PaymentsService] PaymentsService iniciado. Reloj físico con desfase -2 s -> 19:35:39.151 | Lamport = 0
+[PaymentsService] | Proceso          | Evento                                                  | Reloj físico | Lamport | Regla / tipo         |
+[PaymentsService] |------------------|---------------------------------------------------------|--------------|---------|----------------------|
+[PaymentsService] | PaymentsService  | Conciliación bancaria (evento concurrente)              | 19:35:43.353 |       1 | 0+1                  |
+[PaymentsService] | PaymentsService  | Solicitud de pago recibida (P-001)                      | 19:35:43.948 |       8 | max(1,7)+1           |
+[PaymentsService] | PaymentsService  | Pago procesado TX-0001: $850000 APROBADO                | 19:35:43.949 |       9 | 8+1                  |
+[PaymentsService] | PaymentsService  | Confirmación de pago enviada (P-001)                    | 19:35:44.002 |      10 | 9+1                  |
+[PaymentsService] | PaymentsService  | Solicitud de pago recibida (P-003)                      | 19:35:44.431 |      27 | max(10,26)+1         |
+[PaymentsService] | PaymentsService  | Pago procesado TX-0002: $30000 APROBADO                 | 19:35:44.432 |      28 | 27+1                 |
+[PaymentsService] | PaymentsService  | Confirmación de pago enviada (P-003)                    | 19:35:44.486 |      29 | 28+1                 |

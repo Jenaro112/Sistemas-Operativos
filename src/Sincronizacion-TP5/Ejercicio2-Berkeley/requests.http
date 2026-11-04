@@ -1,0 +1,18 @@
+### Hora de cada nodo
+GET http://localhost:5201/api/clock
+###
+GET http://localhost:5202/api/clock
+###
+GET http://localhost:5203/api/clock
+
+### Estado de un nodo (responde aunque esté "desconectado")
+GET http://localhost:5203/api/admin/status
+
+### Introducir en caliente un nodo con 5 minutos de diferencia
+POST http://localhost:5203/api/admin/offset?seconds=300
+
+### Simular la desconexión de un participante
+POST http://localhost:5202/api/admin/disconnect
+
+### Reconectarlo
+POST http://localhost:5202/api/admin/reconnect

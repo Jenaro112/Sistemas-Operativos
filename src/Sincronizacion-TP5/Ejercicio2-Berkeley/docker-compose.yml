@@ -1,0 +1,87 @@
+# Ejercicio 2 - Algoritmo de Berkeley
+# 1 coordinador + 3 nodos participantes (4 aplicaciones).
+#
+# Escenario base (diferencias de 5, 10 y 20 s):
+#   docker compose --env-file escenarios/01-base.env up --build
+# Nodo con 5 minutos de diferencia (promedio simple):
+#   docker compose --env-file escenarios/02-nodo-5-minutos.env up --build
+# Nodo con 5 minutos + promedio tolerante a fallas:
+#   docker compose --env-file escenarios/03-tolerante-a-fallas.env up --build
+#
+# Desconexión de un participante (con el sistema corriendo):
+#   docker compose stop nodo-2        (o)  curl -X POST http://localhost:5202/api/admin/disconnect
+# Falla del coordinador:
+#   docker compose stop coordinador
+
+x-node: &node
+  build: ./BerkeleyNode
+  volumes:
+    - ./logs:/app/logs
+  networks:
+    - berkeley-net
+
+services:
+  coordinador:
+    build: ./BerkeleyCoordinator
+    container_name: berkeley-coordinador
+    depends_on:
+      - nodo-1
+      - nodo-2
+      - nodo-3
+    environment:
+      COORDINATOR_NAME: coordinador
+      INITIAL_OFFSET_SECONDS: "0"
+      CLOCK_DRIFT_PPM: "0"
+      NODES: "nodo-1=http://nodo-1:8080;nodo-2=http://nodo-2:8080;nodo-3=http://nodo-3:8080"
+      SYNC_INTERVAL_SECONDS: ${SYNC_INTERVAL_SECONDS:-15}
+      MAX_DEVIATION_SECONDS: ${MAX_DEVIATION_SECONDS:-0}
+      REQUEST_TIMEOUT_MS: "2000"
+      LOG_DIR: /app/logs
+      DISPLAY_UTC_OFFSET_HOURS: "-3"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - berkeley-net
+
+  nodo-1:
+    <<: *node
+    container_name: berkeley-nodo-1
+    environment:
+      NODE_NAME: nodo-1
+      INITIAL_OFFSET_SECONDS: ${NODE1_OFFSET:-5}
+      CLOCK_DRIFT_PPM: ${NODE1_DRIFT:-800}
+      COORDINATOR_TIMEOUT_SECONDS: "45"
+      LOG_DIR: /app/logs
+      DISPLAY_UTC_OFFSET_HOURS: "-3"
+    ports:
+      - "5201:8080"
+
+  nodo-2:
+    <<: *node
+    container_name: berkeley-nodo-2
+    environment:
+      NODE_NAME: nodo-2
+      INITIAL_OFFSET_SECONDS: ${NODE2_OFFSET:--10}
+      CLOCK_DRIFT_PPM: ${NODE2_DRIFT:--600}
+      COORDINATOR_TIMEOUT_SECONDS: "45"
+      LOG_DIR: /app/logs
+      DISPLAY_UTC_OFFSET_HOURS: "-3"
+    ports:
+      - "5202:8080"
+
+  nodo-3:
+    <<: *node
+    container_name: berkeley-nodo-3
+    environment:
+      NODE_NAME: nodo-3
+      INITIAL_OFFSET_SECONDS: ${NODE3_OFFSET:-20}
+      CLOCK_DRIFT_PPM: ${NODE3_DRIFT:-300}
+      COORDINATOR_TIMEOUT_SECONDS: "45"
+      LOG_DIR: /app/logs
+      DISPLAY_UTC_OFFSET_HOURS: "-3"
+    ports:
+      - "5203:8080"
+
+networks:
+  berkeley-net:
+    driver: bridge
