@@ -1,0 +1,22 @@
+[P4] Proceso P4 iniciado en el puerto 6004 | reloj fisico 16:52:12.805 (desfase -2000 ms) | siguiente: P1 en 127.0.0.1:6001
+[P4] Orden de la aplicacion: P1 -> P2 -> ... -> P4 (2 ronda/s)
+[P4] | Tipo      | Evento                                        | Reloj fisico | Lamport | Regla                         |
+[P4] |-----------|-----------------------------------------------|--------------|---------|-------------------------------|
+[P4] | INTERNO   | Evento local previo #1                        | 16:52:12.805 |       1 | 0+1                           |
+[P4] | RECEPCION | Recibe de P3 (L=9): P3 termino, sigue P4      | 16:52:14.710 |      10 | max(1,9)+1  <- se adelanta    |
+[P4] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 1)   | 16:52:14.710 |      11 | 10+1                          |
+[P4] | ENVIO     | Envia a P1: fin de ronda 1                    | 16:52:15.151 |      12 | 11+1                          |
+[P4] | RECEPCION | Recibe de P3 (L=21): P3 termino, sigue P4     | 16:52:16.574 |      22 | max(12,21)+1  <- se adelanta  |
+[P4] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 2)   | 16:52:16.574 |      23 | 22+1                          |
+[P4] | ENVIO     | Envia a P1: fin de ronda 2                    | 16:52:16.974 |      24 | 23+1                          |
+[P4] 
+[P4] RESUMEN DE EVENTOS DE P4
+[P4] | Tipo      | Evento                                        | Reloj fisico | Lamport | Regla                         |
+[P4] |-----------|-----------------------------------------------|--------------|---------|-------------------------------|
+[P4] | INTERNO   | Evento local previo #1                        | 16:52:12.805 |       1 | 0+1                           |
+[P4] | RECEPCION | Recibe de P3 (L=9): P3 termino, sigue P4      | 16:52:14.710 |      10 | max(1,9)+1  <- se adelanta    |
+[P4] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 1)   | 16:52:14.710 |      11 | 10+1                          |
+[P4] | ENVIO     | Envia a P1: fin de ronda 1                    | 16:52:15.151 |      12 | 11+1                          |
+[P4] | RECEPCION | Recibe de P3 (L=21): P3 termino, sigue P4     | 16:52:16.574 |      22 | max(12,21)+1  <- se adelanta  |
+[P4] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 2)   | 16:52:16.574 |      23 | 22+1                          |
+[P4] | ENVIO     | Envia a P1: fin de ronda 2                    | 16:52:16.974 |      24 | 23+1                          |

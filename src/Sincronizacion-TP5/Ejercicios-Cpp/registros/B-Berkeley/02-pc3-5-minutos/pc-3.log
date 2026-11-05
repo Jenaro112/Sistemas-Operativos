@@ -1,0 +1,7 @@
+[pc-3] Esclavo 'pc-3' escuchando en el puerto 7003 | hora 16:57:27.628 (desfase +300000 ms, deriva 300 ppm)
+[pc-3] El maestro pide la hora -> 16:57:29.633
+[pc-3] Ajuste recibido -226250 ms | antes 16:57:29.634 -> despues 16:53:43.384 | desfase acumulado +73750 ms
+[pc-3] El maestro pide la hora -> 16:53:43.384
+[pc-3] El maestro pide la hora -> 16:53:46.386
+[pc-3] Ajuste recibido +0 ms | antes 16:53:46.386 -> despues 16:53:46.386 | desfase acumulado +73750 ms
+[pc-3] El maestro pide la hora -> 16:53:46.386

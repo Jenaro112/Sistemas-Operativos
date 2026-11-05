@@ -1,0 +1,41 @@
+[pc-B] Cliente 'pc-B' | hora local 16:52:55.620 (desfase +8000 ms, deriva 1000 ppm) | servidor 127.0.0.1:8001 | 3 muestras por ronda, RTT max 1000 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 1
+[pc-B]   Muestra 1: T0=16:52:56.621  T1=16:52:56.621  Ts=16:52:50.620  RTT=0.37 ms
+[pc-B]   Muestra 2: T0=16:52:56.621  T1=16:52:56.621  Ts=16:52:50.620  RTT=0.17 ms
+[pc-B]   Muestra 3: T0=16:52:56.621  T1=16:52:56.621  Ts=16:52:50.620  RTT=0.11 ms
+[pc-B]   Muestra elegida: #3 (RTT minimo 0.11 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:52:50.620 + 0 ms = 16:52:50.620
+[pc-B]   Reloj del sistema (sin tocar): 16:52:56.621
+[pc-B]   Reloj de la app ANTES       : 16:52:56.621
+[pc-B]   Reloj de la app DESPUES     : 16:52:50.620
+[pc-B]   Diferencia aplicada         : -6001 ms
+[pc-B]   Correccion total vs sistema : -6001 ms
+[pc-B]   Precision estimada          : +/-0.05 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 2
+[pc-B]   Muestra 1: T0=16:52:59.625  T1=16:52:59.625  Ts=16:52:53.621  RTT=0.67 ms
+[pc-B]   Muestra 2: T0=16:52:59.625  T1=16:52:59.625  Ts=16:52:53.621  RTT=0.17 ms
+[pc-B]   Muestra 3: T0=16:52:59.625  T1=16:52:59.626  Ts=16:52:53.622  RTT=0.24 ms
+[pc-B]   Muestra elegida: #2 (RTT minimo 0.17 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:52:53.621 + 0 ms = 16:52:53.621
+[pc-B]   Reloj del sistema (sin tocar): 16:52:59.625
+[pc-B]   Reloj de la app ANTES       : 16:52:53.624
+[pc-B]   Reloj de la app DESPUES     : 16:52:53.621
+[pc-B]   Diferencia aplicada         : -3 ms
+[pc-B]   Correccion total vs sistema : -6004 ms
+[pc-B]   Precision estimada          : +/-0.09 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 3
+[pc-B]   Muestra 1: T0=16:53:02.629  T1=16:53:02.629  Ts=16:52:56.622  RTT=0.30 ms
+[pc-B]   Muestra 2: T0=16:53:02.629  T1=16:53:02.629  Ts=16:52:56.622  RTT=0.09 ms
+[pc-B]   Muestra 3: T0=16:53:02.629  T1=16:53:02.629  Ts=16:52:56.622  RTT=0.08 ms
+[pc-B]   Muestra elegida: #3 (RTT minimo 0.08 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:52:56.622 + 0 ms = 16:52:56.622
+[pc-B]   Reloj del sistema (sin tocar): 16:53:02.629
+[pc-B]   Reloj de la app ANTES       : 16:52:56.625
+[pc-B]   Reloj de la app DESPUES     : 16:52:56.622
+[pc-B]   Diferencia aplicada         : -3 ms
+[pc-B]   Correccion total vs sistema : -6007 ms
+[pc-B]   Precision estimada          : +/-0.04 ms
+[pc-B] Cliente finalizado. Hora sistema 16:53:02.630 | hora app 16:52:56.623

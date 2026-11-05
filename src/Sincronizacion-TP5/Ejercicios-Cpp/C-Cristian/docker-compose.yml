@@ -1,0 +1,37 @@
+# Ejercicio C - Cristian: servidor de tiempo + 3 clientes
+# Uso: docker compose up --build      (los logs quedan en ./logs)
+# Para probar una red lenta/asimetrica: agregar --req-delay-ms 400 --resp-delay-ms 50 al servidor
+# Para probar la caida del servidor: docker compose stop servidor
+
+x-pc: &pc
+  build:
+    context: ..
+    dockerfile: Dockerfile
+  image: tp5-sincronizacion-cpp
+  volumes:
+    - ./logs:/app/logs
+  networks: [cristian-net]
+
+services:
+  servidor:
+    <<: *pc
+    container_name: cristian-servidor
+    command: cristian_server --port 8001 --offset-s 2
+  pc-a:
+    <<: *pc
+    container_name: cristian-pc-a
+    depends_on: [servidor]
+    command: cristian_client --name pc-A --server servidor:8001 --offset-s 0 --drift-ppm 500
+  pc-b:
+    <<: *pc
+    container_name: cristian-pc-b
+    depends_on: [servidor]
+    command: cristian_client --name pc-B --server servidor:8001 --offset-s 8 --drift-ppm 1000
+  pc-c:
+    <<: *pc
+    container_name: cristian-pc-c
+    depends_on: [servidor]
+    command: cristian_client --name pc-C --server servidor:8001 --offset-s -5 --drift-ppm -800
+
+networks:
+  cristian-net:

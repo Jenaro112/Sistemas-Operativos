@@ -1,0 +1,8 @@
+[pc-A] Cliente 'pc-A' | hora local 16:53:02.548 (desfase +0 ms, deriva 500 ppm) | servidor 127.0.0.1:8001 | 3 muestras por ronda, RTT max 1000 ms
+[pc-A] ========================================================================
+[pc-A] RONDA 1
+[pc-A]   Muestra 1: T0=16:53:03.548  T1=16:53:04.850  Ts=16:53:06.248  RTT=1301.02 ms
+[pc-A]   Muestra 2: T0=16:53:04.850  T1=16:53:06.151  Ts=16:53:07.549  RTT=1300.68 ms
+[pc-A]   Muestra 3: T0=16:53:06.151  T1=16:53:07.453  Ts=16:53:08.849  RTT=1300.70 ms
+[pc-A]   !! Todas las muestras superan el RTT maximo (1000 ms): NO se ajusta el reloj.
+[pc-A] Cliente finalizado. Hora sistema 16:53:07.453 | hora app 16:53:07.453

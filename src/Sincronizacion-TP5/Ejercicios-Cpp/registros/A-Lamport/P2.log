@@ -1,0 +1,20 @@
+[P2] Proceso P2 iniciado en el puerto 6002 | reloj fisico 16:52:11.806 (desfase -3000 ms) | siguiente: P3 en 127.0.0.1:6003
+[P2] Orden de la aplicacion: P1 -> P2 -> ... -> P4 (2 ronda/s)
+[P2] | Tipo      | Evento                                        | Reloj fisico | Lamport | Regla                         |
+[P2] |-----------|-----------------------------------------------|--------------|---------|-------------------------------|
+[P2] | RECEPCION | Recibe de P1 (L=2): P1 termino, sigue P2      | 16:52:12.699 |       3 | max(0,2)+1  <- se adelanta    |
+[P2] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 1)   | 16:52:12.699 |       4 | 3+1                           |
+[P2] | ENVIO     | Envia a P3: P2 termino, sigue P3              | 16:52:13.190 |       5 | 4+1                           |
+[P2] | RECEPCION | Recibe de P1 (L=15): P1 termino, sigue P2     | 16:52:14.680 |      16 | max(5,15)+1  <- se adelanta   |
+[P2] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 2)   | 16:52:14.680 |      17 | 16+1                          |
+[P2] | ENVIO     | Envia a P3: P2 termino, sigue P3              | 16:52:15.168 |      18 | 17+1                          |
+[P2] 
+[P2] RESUMEN DE EVENTOS DE P2
+[P2] | Tipo      | Evento                                        | Reloj fisico | Lamport | Regla                         |
+[P2] |-----------|-----------------------------------------------|--------------|---------|-------------------------------|
+[P2] | RECEPCION | Recibe de P1 (L=2): P1 termino, sigue P2      | 16:52:12.699 |       3 | max(0,2)+1  <- se adelanta    |
+[P2] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 1)   | 16:52:12.699 |       4 | 3+1                           |
+[P2] | ENVIO     | Envia a P3: P2 termino, sigue P3              | 16:52:13.190 |       5 | 4+1                           |
+[P2] | RECEPCION | Recibe de P1 (L=15): P1 termino, sigue P2     | 16:52:14.680 |      16 | max(5,15)+1  <- se adelanta   |
+[P2] | INTERNO   | Ejecuta su parte de la aplicacion (ronda 2)   | 16:52:14.680 |      17 | 16+1                          |
+[P2] | ENVIO     | Envia a P3: P2 termino, sigue P3              | 16:52:15.168 |      18 | 17+1                          |

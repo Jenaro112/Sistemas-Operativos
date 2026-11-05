@@ -1,0 +1,36 @@
+# Ejercicio B - Berkeley: 1 maestro + 3 esclavos
+# Uso: docker compose up --build      (los logs quedan en ./logs)
+# Para probar un reloj muy desfasado: cambiar --offset-s de pc-3 a 300
+# Para probar el promedio tolerante a fallas: agregar --max-dev-s 30 al maestro
+# Para simular la caida de un esclavo: docker compose stop pc-2
+
+x-pc: &pc
+  build:
+    context: ..
+    dockerfile: Dockerfile
+  image: tp5-sincronizacion-cpp
+  volumes:
+    - ./logs:/app/logs
+  networks: [berkeley-net]
+
+services:
+  maestro:
+    <<: *pc
+    container_name: berkeley-maestro
+    depends_on: [pc-1, pc-2, pc-3]
+    command: berkeley_master --slaves pc-1:7001,pc-2:7001,pc-3:7001 --interval 10 --max-dev-s 0
+  pc-1:
+    <<: *pc
+    container_name: berkeley-pc-1
+    command: berkeley_slave --name pc-1 --port 7001 --offset-s 5 --drift-ppm 800
+  pc-2:
+    <<: *pc
+    container_name: berkeley-pc-2
+    command: berkeley_slave --name pc-2 --port 7001 --offset-s -10 --drift-ppm -600
+  pc-3:
+    <<: *pc
+    container_name: berkeley-pc-3
+    command: berkeley_slave --name pc-3 --port 7001 --offset-s 20 --drift-ppm 300
+
+networks:
+  berkeley-net:

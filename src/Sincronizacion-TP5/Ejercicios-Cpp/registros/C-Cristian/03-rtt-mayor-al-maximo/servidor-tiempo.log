@@ -1,0 +1,10 @@
+[servidor-tiempo] Servidor de tiempo en el puerto 8001 | hora 16:53:04.244 (desfase +2000 ms) | red simulada: ida 700 ms, vuelta 600 ms
+[servidor-tiempo] #2 pedido de 'pc-A' -> 16:53:06.248
+[servidor-tiempo] #1 pedido de 'pc-C' -> 16:53:06.248
+[servidor-tiempo] #3 pedido de 'pc-B' -> 16:53:06.249
+[servidor-tiempo] #4 pedido de 'pc-C' -> 16:53:07.549
+[servidor-tiempo] #5 pedido de 'pc-A' -> 16:53:07.549
+[servidor-tiempo] #6 pedido de 'pc-B' -> 16:53:07.549
+[servidor-tiempo] #7 pedido de 'pc-A' -> 16:53:08.849
+[servidor-tiempo] #8 pedido de 'pc-C' -> 16:53:08.849
+[servidor-tiempo] #9 pedido de 'pc-B' -> 16:53:08.849

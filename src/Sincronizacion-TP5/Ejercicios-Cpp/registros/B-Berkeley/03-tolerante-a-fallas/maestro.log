@@ -1,0 +1,33 @@
+[maestro] Maestro 'maestro' iniciado | hora 16:52:33.649 | esclavos: 3 | intervalo 3 s | promedio tolerante a fallas (desvio max 30 s)
+[maestro] ====================================================================================================
+[maestro] RONDA 1
+[maestro] Computadora               Hora leida        RTT     Diferencia  Promedio?       Ajuste
+[maestro] --------------------------------------------------------------------------------------
+[maestro] maestro (maestro)         16:52:35.149        -          +0 ms         si     -1666 ms
+[maestro] pc-1 (127.0.0.1:7001)     16:52:40.151        0       +5002 ms         si     -6668 ms
+[maestro] pc-2 (127.0.0.1:7002)     16:52:25.148        0      -10001 ms         si     +8335 ms
+[maestro] pc-3 (127.0.0.1:7003)     16:57:35.150        0     +300001 ms   EXCLUIDO   -301667 ms
+[maestro] Promedio = (+0 ms + +5002 ms + -10001 ms) / 3 = -1666 ms
+[maestro] !! pc-3 (127.0.0.1:7003) se aleja mas de 30 s de la mediana: no entra en el promedio, pero igual se corrige.
+[maestro] Despues de sincronizar:
+[maestro]    maestro (maestro)         16:52:33.484   diferencia +0 ms
+[maestro]    pc-1 (127.0.0.1:7001)     16:52:33.484   diferencia +0 ms
+[maestro]    pc-2 (127.0.0.1:7002)     16:52:33.484   diferencia +0 ms
+[maestro]    pc-3 (127.0.0.1:7003)     16:52:33.483   diferencia -1 ms
+[maestro]    Dispersion entre relojes: ANTES 310002 ms -> DESPUES 1 ms
+[maestro] ====================================================================================================
+[maestro] RONDA 2
+[maestro] Computadora               Hora leida        RTT     Diferencia  Promedio?       Ajuste
+[maestro] --------------------------------------------------------------------------------------
+[maestro] maestro (maestro)         16:52:36.484        -          +0 ms         si        +0 ms
+[maestro] pc-1 (127.0.0.1:7001)     16:52:36.487        1          +2 ms         si        -2 ms
+[maestro] pc-2 (127.0.0.1:7002)     16:52:36.483        0          -2 ms         si        +2 ms
+[maestro] pc-3 (127.0.0.1:7003)     16:52:36.485        0          +0 ms         si        +0 ms
+[maestro] Promedio = (+0 ms + +2 ms + -2 ms + +0 ms) / 4 = +0 ms
+[maestro] Despues de sincronizar:
+[maestro]    maestro (maestro)         16:52:36.485   diferencia +0 ms
+[maestro]    pc-1 (127.0.0.1:7001)     16:52:36.486   diferencia +1 ms
+[maestro]    pc-2 (127.0.0.1:7002)     16:52:36.485   diferencia +0 ms
+[maestro]    pc-3 (127.0.0.1:7003)     16:52:36.486   diferencia +1 ms
+[maestro]    Dispersion entre relojes: ANTES 4 ms -> DESPUES 1 ms
+[maestro] Maestro finalizado.

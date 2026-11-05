@@ -1,0 +1,28 @@
+[pc-B] Cliente 'pc-B' | hora local 16:53:03.231 (desfase +8000 ms, deriva 1000 ppm) | servidor 127.0.0.1:8001 | 3 muestras por ronda, RTT max 1000 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 1
+[pc-B]   Muestra 1: T0=16:53:04.232  T1=16:53:04.683  Ts=16:52:58.631  RTT=450.84 ms
+[pc-B]   Muestra 2: T0=16:53:04.683  T1=16:53:05.134  Ts=16:52:59.082  RTT=450.60 ms
+[pc-B]   Muestra 3: T0=16:53:05.134  T1=16:53:05.585  Ts=16:52:59.533  RTT=450.68 ms
+[pc-B]   Muestra elegida: #2 (RTT minimo 450.60 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:52:59.082 + 225 ms = 16:52:59.307
+[pc-B]   Reloj del sistema (sin tocar): 16:53:05.134
+[pc-B]   Reloj de la app ANTES       : 16:53:05.134
+[pc-B]   Reloj de la app DESPUES     : 16:52:59.307
+[pc-B]   Diferencia aplicada         : -5827 ms
+[pc-B]   Correccion total vs sistema : -5827 ms
+[pc-B]   Precision estimada          : +/-225.30 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 2
+[pc-B]   Muestra 1: T0=16:53:08.588  T1=16:53:09.040  Ts=16:53:02.984  RTT=451.05 ms
+[pc-B]   Muestra 2: T0=16:53:09.040  T1=16:53:09.491  Ts=16:53:03.435  RTT=450.85 ms
+[pc-B]   Muestra 3: T0=16:53:09.491  T1=16:53:09.943  Ts=16:53:03.886  RTT=451.27 ms
+[pc-B]   Muestra elegida: #2 (RTT minimo 450.85 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:53:03.435 + 225 ms = 16:53:03.660
+[pc-B]   Reloj del sistema (sin tocar): 16:53:09.491
+[pc-B]   Reloj de la app ANTES       : 16:53:03.664
+[pc-B]   Reloj de la app DESPUES     : 16:53:03.660
+[pc-B]   Diferencia aplicada         : -4 ms
+[pc-B]   Correccion total vs sistema : -5831 ms
+[pc-B]   Precision estimada          : +/-225.43 ms
+[pc-B] Cliente finalizado. Hora sistema 16:53:09.943 | hora app 16:53:04.112

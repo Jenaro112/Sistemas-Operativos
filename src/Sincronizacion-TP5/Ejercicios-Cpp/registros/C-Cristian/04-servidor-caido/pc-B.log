@@ -1,0 +1,22 @@
+[pc-B] Cliente 'pc-B' | hora local 16:53:16.062 (desfase +8000 ms, deriva 1000 ppm) | servidor 127.0.0.1:8001 | 3 muestras por ronda, RTT max 1000 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 1
+[pc-B]   Muestra 1: T0=16:53:17.063  T1=16:53:17.063  Ts=16:53:11.061  RTT=0.16 ms
+[pc-B]   Muestra 2: T0=16:53:17.063  T1=16:53:17.063  Ts=16:53:11.061  RTT=0.14 ms
+[pc-B]   Muestra 3: T0=16:53:17.063  T1=16:53:17.063  Ts=16:53:11.062  RTT=0.20 ms
+[pc-B]   Muestra elegida: #2 (RTT minimo 0.14 ms)
+[pc-B]   Hora estimada = Ts + RTT/2 = 16:53:11.061 + 0 ms = 16:53:11.061
+[pc-B]   Reloj del sistema (sin tocar): 16:53:17.063
+[pc-B]   Reloj de la app ANTES       : 16:53:17.063
+[pc-B]   Reloj de la app DESPUES     : 16:53:11.061
+[pc-B]   Diferencia aplicada         : -6002 ms
+[pc-B]   Correccion total vs sistema : -6002 ms
+[pc-B]   Precision estimada          : +/-0.07 ms
+[pc-B] ========================================================================
+[pc-B] RONDA 2
+[pc-B]   Muestra 1: SIN RESPUESTA tras 0 ms
+[pc-B]   Muestra 2: SIN RESPUESTA tras 0 ms
+[pc-B]   Muestra 3: SIN RESPUESTA tras 0 ms
+[pc-B]   !! El servidor de tiempo NO RESPONDE. Se mantiene la ultima correccion (-6002 ms) y el reloj sigue con su deriva.
+[pc-B]   Hora app: 16:53:14.064
+[pc-B] Cliente finalizado. Hora sistema 16:53:20.067 | hora app 16:53:14.065
